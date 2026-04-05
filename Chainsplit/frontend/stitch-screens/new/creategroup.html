@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#005ac2",
+                        "on-secondary-fixed-variant": "#005047",
+                        "error": "#ffb4ab",
+                        "tertiary": "#ffb786",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-container": "#004d44",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-container": "#df7412",
+                        "on-tertiary-container": "#461f00",
+                        "surface-container-high": "#272a34",
+                        "surface-variant": "#32343f",
+                        "surface-container-low": "#181b25",
+                        "outline-variant": "#424754",
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface": "#10131c",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-container": "#4d8eff",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-highest": "#32343f",
+                        "surface-bright": "#363943",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary": "#502400",
+                        "on-background": "#e0e2ef",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#62fae3",
+                        "surface-container": "#1c1f29",
+                        "inverse-surface": "#e0e2ef",
+                        "primary": "#adc6ff",
+                        "on-surface": "#e0e2ef",
+                        "surface-container-lowest": "#0b0e17",
+                        "on-primary": "#002e6a",
+                        "secondary": "#44e2cd",
+                        "on-tertiary-fixed": "#311400",
+                        "background": "#10131c",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-secondary-fixed": "#00201c",
+                        "surface-dim": "#10131c",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-error": "#690005",
+                        "secondary-container": "#03c6b2",
+                        "on-secondary": "#003731",
+                        "outline": "#8c909f",
+                        "inverse-on-surface": "#2d303a",
+                        "secondary-fixed-dim": "#3cddc7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["IBM Plex Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(28, 31, 41, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .step-gradient {
+            background: linear-gradient(135deg, #adc6ff 0%, #4d8eff 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen overflow-hidden">
+<!-- Blurred Background Content (Dashboard Placeholder) -->
+<div class="fixed inset-0 z-0 flex blur-md opacity-30 pointer-events-none">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-72 bg-[#10131c]/80 backdrop-blur-3xl flex flex-col h-full py-8 font-['Space_Grotesk'] tracking-tight shadow-2xl">
+<div class="px-8 mb-10">
+<span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-blue-600">CHRONOS</span>
+</div>
+<nav class="flex-1">
+<div class="text-blue-400 font-bold border-r-2 border-blue-400 transition-all duration-300 py-4 px-6 flex items-center gap-4">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </div>
+<div class="text-slate-500 hover:text-slate-200 py-4 px-6 flex items-center gap-4">
+<span class="material-symbols-outlined">account_balance_wallet</span> Vault
+                </div>
+<div class="text-slate-500 hover:text-slate-200 py-4 px-6 flex items-center gap-4">
+<span class="material-symbols-outlined">swap_horiz</span> Trade
+                </div>
+</nav>
+</aside>
+<!-- Main Content Canvas Placeholder -->
+<main class="flex-1 p-10 pt-32">
+<div class="grid grid-cols-3 gap-6">
+<div class="h-48 bg-surface-container-low rounded-xl"></div>
+<div class="h-48 bg-surface-container-low rounded-xl"></div>
+<div class="h-48 bg-surface-container-low rounded-xl"></div>
+<div class="col-span-2 h-96 bg-surface-container-low rounded-xl"></div>
+<div class="h-96 bg-surface-container-low rounded-xl"></div>
+</div>
+</main>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-surface-container-lowest/40 backdrop-blur-sm">
+<!-- Modal Container (700px wide) -->
+<div class="w-full max-w-[700px] glass-panel rounded-xl shadow-2xl border border-outline-variant/15 flex flex-col overflow-hidden">
+<!-- Modal Header -->
+<div class="px-10 pt-10 pb-6">
+<div class="flex justify-between items-center mb-8">
+<h1 class="text-2xl font-headline font-bold text-on-surface">Create Group</h1>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Step Progress Indicator -->
+<div class="relative flex justify-between items-center px-4">
+<!-- Progress Line Background -->
+<div class="absolute top-1/2 left-0 right-0 h-0.5 bg-surface-container-highest -translate-y-1/2 z-0"></div>
+<!-- Active Progress Line -->
+<div class="absolute top-1/2 left-0 w-1/3 h-0.5 step-gradient -translate-y-1/2 z-0"></div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-4 h-4 rounded-full step-gradient shadow-[0_0_10px_rgba(173,198,255,0.5)]"></div>
+<span class="text-[10px] font-headline font-medium uppercase tracking-widest text-primary">Info</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline-variant"></div>
+<span class="text-[10px] font-headline font-medium uppercase tracking-widest text-on-surface-variant">Members</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline-variant"></div>
+<span class="text-[10px] font-headline font-medium uppercase tracking-widest text-on-surface-variant">Vault</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline-variant"></div>
+<span class="text-[10px] font-headline font-medium uppercase tracking-widest text-on-surface-variant">Deploy</span>
+</div>
+</div>
+</div>
+<!-- Modal Body (Step 1: Group Info) -->
+<div class="flex-1 px-10 py-6 overflow-y-auto max-h-[614px]">
+<div class="space-y-10">
+<!-- Step 1 Layout -->
+<div class="flex gap-8">
+<!-- Emoji Picker Box -->
+<div class="group relative">
+<div class="w-24 h-24 bg-surface-container-lowest rounded-xl flex items-center justify-center border border-outline-variant/15 hover:border-secondary/40 transition-all cursor-pointer">
+<span class="text-4xl">🏔️</span>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-surface-container-highest w-8 h-8 rounded-lg flex items-center justify-center border border-outline-variant/30 text-on-surface">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+</div>
+<!-- Name Input -->
+<div class="flex-1 space-y-4">
+<label class="block text-sm font-medium text-on-surface-variant">Group Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-lg focus:ring-1 focus:ring-secondary/40 transition-all placeholder:text-outline/40 text-on-surface" placeholder="e.g. Alps Expedition 2024" type="text"/>
+</div>
+</div>
+<!-- Category Section -->
+<div class="space-y-4">
+<label class="block text-sm font-medium text-on-surface-variant">Group Category</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full border border-secondary/40 bg-secondary/10 text-secondary font-medium transition-all">Trip</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant hover:border-outline-variant hover:text-on-surface transition-all">Flat</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant hover:border-outline-variant hover:text-on-surface transition-all">Office</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant hover:border-outline-variant hover:text-on-surface transition-all">Friends</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant hover:border-outline-variant hover:text-on-surface transition-all">Other</button>
+</div>
+</div>
+<!-- Visual Accent Card -->
+<div class="p-6 rounded-xl bg-gradient-to-br from-primary-container/20 to-transparent border border-primary/10">
+<div class="flex gap-4 items-center">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Vault Smart Contract</h4>
+<p class="text-sm text-on-surface-variant mt-1">Every group creates a unique multi-signature vault on Cronos for secure asset management.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-8 bg-surface-container-low flex justify-between items-center border-t border-outline-variant/10">
+<button class="px-6 py-3 text-on-surface-variant font-medium hover:text-on-surface transition-colors">Cancel</button>
+<div class="flex gap-4">
+<button class="px-8 py-3 rounded-lg font-bold text-on-primary-fixed step-gradient shadow-lg hover:brightness-110 active:scale-95 transition-all">
+                        Deploy Vault on Cronos
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Top Bar Anchor (Mockup Only) -->
+<header class="fixed top-0 right-0 w-full h-20 z-50 bg-[#10131c]/40 backdrop-blur-xl flex items-center justify-between px-10 pointer-events-none">
+<div class="flex items-center gap-4 text-slate-100 font-headline font-bold text-lg">
+<span>The Ethereal Vault</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/20 flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#44e2cd]"></div>
+<span class="font-label text-sm text-secondary">0x4F...3B92</span>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-slate-400">notifications</span>
+<span class="material-symbols-outlined text-slate-400">grid_view</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of professional male investor with confident expression and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoe8c-yejn3lLqAmtlr3UHehUjTCkaGfBN96NZXNwid7OED2NUf8LD2SQmlr6TaUjfcV-EghQNmsTzfJ9KRG2xrWhXeROOcvzrAtiNO95AkPERWISTq9ilO9jbTk9-GTzjK9exIi-pwayhag4158162Gbz7Y97mObT7smHTMhTJ4fkugGyxD92Q6DUIZnjL07gwFbGB5Xl10qG9lrg5akzT0cWXQeWXcEswXylHggdZPzW6D7Sclysl8OP6KV3NQ28BobvekYM"/>
+</div>
+</div>
+</header>
+</body></html>

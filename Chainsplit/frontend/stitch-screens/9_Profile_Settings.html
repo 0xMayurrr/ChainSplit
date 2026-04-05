@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Syne:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#002e6a",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#d8e2ff",
+              "surface-container-highest": "#32343f",
+              "primary-fixed-dim": "#adc6ff",
+              "secondary-fixed": "#d3e4fe",
+              "tertiary-container": "#00a392",
+              "secondary": "#b7c8e1",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary": "#003731",
+              "on-background": "#e0e2ef",
+              "inverse-on-surface": "#2d303a",
+              "tertiary-fixed": "#62fae3",
+              "on-primary-fixed-variant": "#004395",
+              "error": "#ffb4ab",
+              "tertiary": "#3cddc7",
+              "secondary-fixed-dim": "#b7c8e1",
+              "error-container": "#93000a",
+              "surface-dim": "#10131c",
+              "tertiary-fixed-dim": "#3cddc7",
+              "inverse-surface": "#e0e2ef",
+              "surface": "#10131c",
+              "background": "#10131c",
+              "on-error": "#690005",
+              "on-secondary": "#213145",
+              "on-tertiary-container": "#00302a",
+              "on-secondary-fixed": "#0b1c30",
+              "on-surface": "#e0e2ef",
+              "on-primary-container": "#00285d",
+              "surface-variant": "#32343f",
+              "surface-container-low": "#181b25",
+              "on-tertiary-fixed": "#00201c",
+              "primary": "#adc6ff",
+              "surface-container-lowest": "#0b0e17",
+              "on-tertiary-fixed-variant": "#005047",
+              "surface-container": "#1c1f29",
+              "on-secondary-fixed-variant": "#38485d",
+              "outline-variant": "#424754",
+              "surface-tint": "#adc6ff",
+              "on-surface-variant": "#c2c6d6",
+              "surface-container-high": "#272a34",
+              "on-secondary-container": "#a9bad3",
+              "primary-container": "#4d8eff",
+              "inverse-primary": "#005ac2",
+              "surface-bright": "#363943",
+              "outline": "#8c909f",
+              "on-primary-fixed": "#001a42"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"],
+              "mono": ["IBM Plex Mono"],
+              "display": ["Syne"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(50, 52, 63, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 12px rgba(173, 198, 255, 0.3);
+        }
+        .top-light-border {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        body {
+            background-color: #10131c;
+            background-image: radial-gradient(circle at 0% 0%, rgba(60, 221, 199, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 100% 100%, rgba(173, 198, 255, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-body text-on-background min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 py-4 max-w-none bg-[#32343f]/60 backdrop-blur-xl z-50 border-b border-white/10 shadow-[0_16px_32px_-12px_rgba(173,198,255,0.04)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#adc6ff] tracking-tighter font-headline">ChainSplit</span>
+<div class="hidden md:flex gap-6">
+<a class="text-gray-500 hover:text-[#adc6ff]/80 transition-colors font-headline font-bold tracking-tight" href="#">Dashboard</a>
+<a class="text-gray-500 hover:text-[#adc6ff]/80 transition-colors font-headline font-bold tracking-tight" href="#">Groups</a>
+<a class="text-gray-500 hover:text-[#adc6ff]/80 transition-colors font-headline font-bold tracking-tight" href="#">Activity</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-low px-3 py-1.5 rounded-lg flex items-center gap-2 border border-white/5">
+<span class="text-xs font-mono text-tertiary">1,250 CRO</span>
+<div class="h-3 w-[1px] bg-white/10"></div>
+<span class="text-xs font-mono text-primary">0x...A42B</span>
+</div>
+<img alt="User Wallet Avatar" class="w-10 h-10 rounded-full border-2 border-primary/20" data-alt="minimalist geometric 3d avatar with glowing neon blue and teal accents on a dark metallic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS-pFHM25T7sTJ3nrVyu4w6uxa4nQIZWFwyhsz_ZIH9r07o1T4yPggkB20X-5xoGrmdQwoMiXxPU8joFXN9_WkV1Ac9qzYf83qoaAXChQtX7ni_0bokVAYrYr31kf539GYXtRuBzugqDx4kdNgVYQEwt1DDxLCAmvkRuhij6BLuy6oka0ip3dB8Q4RrkaM80jE4b5zim1SbyBVyCrIlhNfNK5tfqJ_AU9pt8h65-CMH-nQ3HybOti_11pzw7Jppd_1ht-2Y4nwtY8"/>
+</div>
+</nav>
+<!-- Sidebar (Web Only) -->
+<aside class="hidden md:flex flex-col h-screen p-4 bg-[#10131c] h-full w-64 fixed left-0 top-0 border-r border-white/5 pt-24 z-40 font-body font-medium">
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#181b25] transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#181b25] transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Groups</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#181b25] transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>History</span>
+</a>
+<!-- Active State: Settings -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#adc6ff] bg-[#1c1f29] rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-2 pb-4">
+<a class="flex items-center gap-3 px-4 py-2 text-xs text-gray-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+<span>Docs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-xs text-gray-500 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<button class="mt-4 w-full py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold rounded-lg shadow-[0_0_12px_rgba(173,198,255,0.2)] active:scale-95 transition-transform">
+                Settle Now
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:pl-64 pt-24 pb-12 min-h-screen">
+<div class="max-w-6xl mx-auto px-6">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<h1 class="text-5xl md:text-6xl font-display font-extrabold text-white mb-2 tracking-tight">Profile</h1>
+<p class="text-on-surface-variant font-body text-lg">Manage your identity and preferences on Cronos.</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full border border-error/20 text-error bg-error/5 hover:bg-error/10 transition-colors font-bold uppercase tracking-widest text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+                        Disconnect Wallet
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Wallet & Balance Card -->
+<div class="md:col-span-8 glass-panel top-light-border rounded-3xl p-8 flex flex-col justify-between min-h-[320px] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<div class="flex items-center gap-2 text-tertiary mb-6">
+<span class="material-symbols-outlined" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-display font-bold uppercase tracking-widest text-sm">Active Wallet</span>
+</div>
+<div class="space-y-1">
+<p class="text-on-surface-variant text-xs font-mono uppercase tracking-tighter">Connected Address</p>
+<div class="flex items-center gap-3">
+<h2 class="text-2xl md:text-3xl font-mono font-medium text-white break-all">0x71C7656EC7ab88b098defB751B7401B5f6d8976F</h2>
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+<div class="space-y-1">
+<p class="text-on-surface-variant text-xs font-mono uppercase tracking-tighter">Current Balance</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-mono font-bold text-white">1,250.42</span>
+<span class="text-xl font-mono text-tertiary">CRO</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-on-surface-variant text-xs font-mono uppercase tracking-tighter">Cronos ID</p>
+<div class="flex items-center gap-2">
+<span class="text-2xl font-display font-bold text-primary">chainsplit.cro</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Identity Card -->
+<div class="md:col-span-4 bg-surface-container rounded-3xl p-8 flex flex-col items-center justify-center text-center gap-4">
+<div class="relative">
+<img alt="User Wallet Avatar" class="w-32 h-32 rounded-full border-4 border-primary/20 shadow-2xl" data-alt="vibrant abstract 3d portrait of a digital entity with glowing cyan light and dark chrome textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtTy18N3hxHh2HhiustZ7rgMNd9rpl_2Dg6Op7UZTpalXM2GDbQqwu2_ZiuTc7zLN8fb5P7xeH-SvJC_FFHAuEEhRzuAKad0k6yqy4NCr7tVc-Meedr79jQUNEmqvXB4g8iSvT7bEmItSFOoJb5ckghUtaJQ8ecgN2wsDmgbFMV1EvgHciPksBNbeoATGia6Ij0n31zgNXN1Irmp-rh7zS9xEyWVGNtPjhhJEV9dE1eo3ByoKaPSduS_xYUEajn8WqJRCQwTtFnG4"/>
+<div class="absolute bottom-1 right-1 bg-tertiary p-2 rounded-full border-4 border-surface-container">
+<span class="material-symbols-outlined text-on-tertiary text-sm font-bold" data-icon="edit">edit</span>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-display font-bold text-white">Main Ledger</h3>
+<p class="text-on-surface-variant font-mono text-sm">Member since Mar 2024</p>
+</div>
+<button class="w-full mt-4 py-3 rounded-xl border border-outline-variant/20 hover:bg-white/5 transition-colors text-sm font-bold tracking-widest uppercase">
+                        Change Avatar
+                    </button>
+</div>
+<!-- Notifications Settings -->
+<div class="md:col-span-5 glass-panel top-light-border rounded-3xl p-8">
+<h3 class="text-xl font-display font-bold text-white mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+                        Preferences
+                    </h3>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-white font-bold">New Expense Alerts</p>
+<p class="text-on-surface-variant text-xs">Notify when someone adds a bill to your groups</p>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-on-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between opacity-50">
+<div>
+<p class="text-white font-bold">Settlement Reminders</p>
+<p class="text-on-surface-variant text-xs">Weekly digest of outstanding balances</p>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative">
+<div class="absolute left-1 top-1 w-4 h-4 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-white font-bold">Email Digest</p>
+<p class="text-on-surface-variant text-xs">Receive monthly reports on shared spending</p>
+</div>
+<div class="w-12 h-6 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-on-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Transaction History -->
+<div class="md:col-span-7 glass-panel top-light-border rounded-3xl p-8">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-display font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="receipt_long">receipt_long</span>
+                            Recent Activity
+                        </h3>
+<button class="text-xs font-bold text-primary hover:underline uppercase tracking-widest">View All</button>
+</div>
+<div class="space-y-4">
+<!-- History Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="text-white font-bold">Settled: Dinner with Web3 Crew</p>
+<p class="text-on-surface-variant text-xs font-mono">0x4a1...9b2e • 2h ago</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white font-mono font-bold">-45.00 CRO</p>
+<span class="text-[10px] px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-bold uppercase">Success</span>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div>
+<p class="text-white font-bold">Added: Cronos Summit Travel</p>
+<p class="text-on-surface-variant text-xs font-mono">0x2d1...f5c2 • 1d ago</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white font-mono font-bold">+120.00 CRO</p>
+<span class="text-[10px] px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-bold uppercase">Pending</span>
+</div>
+</div>
+<!-- History Item 3 -->
+<div class="flex items-center justify-between p-4 rounded-2xl hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="group_add">group_add</span>
+</div>
+<div>
+<p class="text-white font-bold">Joined Group: NFT Project Alpha</p>
+<p class="text-on-surface-variant text-xs font-mono">0x9e3...a110 • 3d ago</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white font-mono font-bold">0.00 CRO</p>
+<span class="text-[10px] px-2 py-0.5 rounded bg-surface-container-highest text-white font-bold uppercase">Info</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="md:pl-64 w-full py-12 bg-[#10131c] border-t border-white/5">
+<div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-[#adc6ff] font-bold font-headline mb-2">ChainSplit</span>
+<p class="font-mono text-xs uppercase tracking-widest text-gray-500">© 2024 ChainSplit. Built on Cronos.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-[#adc6ff] transition-opacity opacity-80 hover:opacity-100" href="#">Terms</a>
+<a class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-[#adc6ff] transition-opacity opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-[#adc6ff] transition-opacity opacity-80 hover:opacity-100" href="#">Etherscan</a>
+<a class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-[#adc6ff] transition-opacity opacity-80 hover:opacity-100" href="#">Github</a>
+</div>
+</div>
+</footer>
+</body></html>

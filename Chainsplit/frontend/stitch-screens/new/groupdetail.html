@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChainSplit - Goa Trip 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Syne:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#e0e2ef",
+                        "secondary": "#44e2cd",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "surface-dim": "#10131c",
+                        "on-tertiary": "#502400",
+                        "outline": "#8c909f",
+                        "on-primary-container": "#00285d",
+                        "inverse-primary": "#005ac2",
+                        "on-tertiary-fixed": "#311400",
+                        "inverse-on-surface": "#2d303a",
+                        "background": "#10131c",
+                        "primary-fixed": "#d8e2ff",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "primary": "#adc6ff",
+                        "surface-container-highest": "#32343f",
+                        "outline-variant": "#424754",
+                        "surface-variant": "#32343f",
+                        "surface": "#10131c",
+                        "on-surface-variant": "#c2c6d6",
+                        "tertiary-container": "#df7412",
+                        "surface-container-high": "#272a34",
+                        "on-surface": "#e0e2ef",
+                        "primary-container": "#4d8eff",
+                        "secondary-fixed": "#62fae3",
+                        "surface-container": "#1c1f29",
+                        "tertiary": "#ffb786",
+                        "secondary-container": "#03c6b2",
+                        "on-tertiary-container": "#461f00",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#181b25",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-secondary": "#003731",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffdcc6",
+                        "inverse-surface": "#e0e2ef",
+                        "surface-tint": "#adc6ff",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0b0e17",
+                        "surface-bright": "#363943",
+                        "on-secondary-fixed-variant": "#005047",
+                        "on-primary": "#002e6a",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-secondary-container": "#004d44",
+                        "on-secondary-fixed": "#00201c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"],
+                        "syne": ["Syne"],
+                        "mono": ["IBM Plex Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.5);
+        }
+        .glass-panel {
+            background: rgba(28, 31, 41, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary/30">
+<aside class="flex flex-col gap-8 py-10 px-6 h-full fixed left-0 top-0 h-screen w-72 rounded-r-none bg-[#181b25] z-50 shadow-[20px_0_40px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#adc6ff] to-[#44e2cd] font-headline">ChainSplit</span>
+<span class="text-[10px] uppercase tracking-widest text-slate-500 font-mono">Cronos Mainnet</span>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] transition-all duration-200 rounded-xl font-headline font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 bg-[#1c1f29] text-[#44e2cd] rounded-xl shadow-[inset_0_0_10px_rgba(68,226,205,0.1)] font-headline font-medium translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Groups</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] transition-all duration-200 rounded-xl font-headline font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Activity</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] transition-all duration-200 rounded-xl font-headline font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<div class="bg-surface-container rounded-2xl p-4 border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User Wallet Avatar" class="w-8 h-8 rounded-full border border-secondary/20" data-alt="close up of a digital character avatar with neon cyber accents and a glowing blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASZuWMJ4RdLVjrW6QiT50NoaRAU5VEob6cD60iofx9xcQTwfWwKE9_gubPi14r5GGeF77wpGe8FrkR5lR3Nt8cwhlwK1vPEB31CGdpYuM69532TnFvmPribILZDIqy0QgNvEsnEXx6eRzM3GYhfp2L5RQQAhs0JxsGkyuLi-1isJ23AlMBENziRlmUIJs5ZkFEotioaAh6e0Wg7_ye4XT7PkntfjupoW2TlGCn8F4EeyxFatcpCO9AYdF3zzXSo8dxSRp020Li"/>
+<div class="flex flex-col">
+<span class="text-xs font-mono text-secondary">0x71C...4f2a</span>
+<span class="text-[10px] text-slate-500">Connected</span>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container-highest text-on-surface text-sm font-headline font-bold rounded-lg hover:bg-surface-bright transition-colors">
+                    New Split
+                </button>
+</div>
+</div>
+</aside>
+<main class="ml-72 min-h-screen">
+<header class="flex justify-end items-center px-12 py-4 gap-6 w-full sticky top-0 z-40 bg-[#10131c]/40 backdrop-blur-2xl">
+<div class="flex items-center gap-4 font-mono text-xs">
+<div class="flex flex-col items-end">
+<span class="text-slate-400">Personal Balance</span>
+<span class="text-[#44e2cd] font-bold">$4,290.50</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/20"></div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="settings">settings</span>
+</div>
+</div>
+</header>
+<section class="relative w-full h-[400px] overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10"></div>
+<img alt="Goa Trip 2026 Header" class="w-full h-full object-cover" data-alt="cinematic wide shot of a tropical beach in goa at dusk with purple and orange skies and silhouettes of palm trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxuHJ6fgTYZbi69sNizoxgcYwbfaZJsMc-1IoTL0Guep7h3JvRyLOwOyYrmZa95bP2nZH-uv8OaAuNqCf37-RwadnE2DRWrp7n7DXSnt86wRT6o7xc50qAZiz9Wg8C9apSVtOrvUtlCydrvIjoRm2YjGKaBImeEeYQzUU3NShrD8V9BgJbF6LHfmoqvssEoji3fW4oGhinYKuzxMwisELT52T8_BDDLo4YolNAuCoTTtj-8lZAlImhkJmouSLHyAmhiAP5L8wQ"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-end px-12 pb-12">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-[10px] font-mono tracking-widest uppercase">Active Status</span>
+<div class="flex -space-x-3">
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-background" data-alt="profile photo of a young man with a friendly smile and bright lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6LqQ9eWa3OHEdcfq3yl1JjerJenQDsyMDSvs_uEacdtrQEpk6_z2wLeLkARr_UFhOPTjLtBI9QCk9LkQLw14zsuHjzTuoVAivuOXvXvhJQjsmpZUB1934mQdU-NH9U8AJ0l_6lQU1_5FAoJmZcDemH11ZPQF2LdtWSZP5Np-nW4l3B6TI2JA294JTyJQwAAZon5G9KwwnKrUSN0FwBw8-AMUWxNbZLHvmx-7aRR55tzsiXEp1PFdyQ_n0PhHhv1IIhoAuvMj0"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-background" data-alt="profile photo of a young woman with curly hair and soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzbD8l8A6SaE_DtWX1AIJSr2qg2W4pQqzkqgQblyYGDJbwDFqPogYNG73SOMZi3n6_OxjFYlcTBmvG-qt2LtCmqoQig-gW2Tzb_zFrdwpvkTd5G_C2tS4maoeFNkcc6005_4hjbPbkqBl4XInsDDP8t3iZbbk61t3JkxQ7PixGtRKsS16G3_QiOESMPcVyGrCzy4T6OKWzO1KQdi4KRjBwpohDvZzFfPdQU9fHiCukZloG_uwH4X_uWl5wm9R75y6-qYXztClE"/>
+<img alt="Member" class="w-8 h-8 rounded-full border-2 border-background" data-alt="profile photo of a smiling person with glasses and clear studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-PGvt8iQcqzwzL-8hGM1sOAiWPovbojgBl--daNhoWXwuJZUrN8cuDNzIKFy9NO31KBWjtCww9axj45NH8YWwF4f0FriM_BQ4_DBh3iHpoTPGElHUvRzrORphY9uS2nL8QNdVVEVEQs0bZD7qlOwdljPHuvmli0R-zvpBEKi1CRmUGq4wi8xk1oiMMRiglwc_rScjHGzcWPQeqyQzXWd6uUI7z5rCrVW17H7xqKIpCF7VS7vQ92_UxmVGD-Yu3VcK4az4q8HL"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-background flex items-center justify-center text-[10px] font-bold text-primary">+2</div>
+</div>
+</div>
+<h1 class="text-7xl font-syne font-extrabold tracking-tighter text-on-surface">Goa Trip 2026</h1>
+<div class="flex items-end justify-between mt-6">
+<div class="flex flex-col gap-1">
+<span class="text-slate-400 font-mono text-sm">Vault Balance</span>
+<div class="flex items-baseline gap-3">
+<span class="text-5xl font-syne font-bold text-primary">500 CRO</span>
+<span class="text-xl font-mono text-slate-500">≈ $41.00</span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-headline font-bold rounded-xl hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                                Add Expense
+                            </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container/60 backdrop-blur-md border border-outline-variant/30 text-on-surface font-headline font-bold rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                                Invite Member
+                            </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-secondary/10 border border-secondary/30 text-secondary font-headline font-bold rounded-xl hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+                                Settle Now
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-12 py-12 flex gap-10">
+<div class="w-[55%] flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="text-2xl font-syne font-bold">Recent Expenses</h3>
+<div class="flex gap-2">
+<span class="px-4 py-1.5 bg-surface-container-low rounded-lg text-xs font-mono text-slate-400 border border-outline-variant/10">Filter: All</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/5">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest/50">
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">Category</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">Name</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">Paid By</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest text-right">Amount</th>
+<th class="px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest text-right">Your Share</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-500" data-icon="restaurant">restaurant</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold">Beachside Dinner</span>
+<span class="text-[10px] text-slate-500 font-mono">Oct 24, 2026</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<img alt="Payer" class="w-6 h-6 rounded-full" data-alt="profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuGNtOAIlo-9ER2zecYFQqggIr4iirdtnkuFKugbJ2QZq7Kd_fpPUoKiKF8KnCfJ5hXeKtm0uDTCI3qvFAhlGSJWkVHw_NVru9ZBIsUzQVOrPcFf56JY0SNkCKsbMo2QZL0xOMczxYHgtmbmUi1gMF3UplOYZigC94BehdjTDYpzedgqLzJbXaKoN30Rz_cg__uG0NvB8jE3xV_bcYC0ZDyAVFQxzQqurRzlNeIjJXjeHMq6VzblYstAd_RZMOQT3u28b7uIZq"/>
+<span class="text-sm font-medium">Alex</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-primary">120.00 CRO</td>
+<td class="px-6 py-5 text-right font-mono text-secondary">24.00 CRO</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-500" data-icon="directions_car">directions_car</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold">Scooter Rentals</span>
+<span class="text-[10px] text-slate-500 font-mono">Oct 23, 2026</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<img alt="Payer" class="w-6 h-6 rounded-full" data-alt="profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDafXVFZ-RBk4vU8j2Wj9ie2NU7nNY547dd5eNKGqAAFL_zeF87YLGenJwShPjiT8set1egV51GUnK91_aDlUJUFxIJaYbXsHA8DJ7Wn4EUNYdZk5cQk_P7nzi0Ny49czFAvuu_F90Y96oy6TluA_QYTg3QclbnhQkBhkIjx4oFlJGmYud47Z1lyA9qGDOY0oynlRZOWNMldWSHKKzTJREDQTin6tkT9Kx_kulERCsXkzEOQ-HgAIH16CqI1We1D5loAAbY6VPw"/>
+<span class="text-sm font-medium">Sarah</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-primary">85.50 CRO</td>
+<td class="px-6 py-5 text-right font-mono text-secondary">17.10 CRO</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-500" data-icon="hotel">hotel</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold">Villa Deposit</span>
+<span class="text-[10px] text-slate-500 font-mono">Oct 20, 2026</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<img alt="Payer" class="w-6 h-6 rounded-full" data-alt="profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmX31SqmctedUcF2RSn8FSdncknw2DHZo0bjhrqro-BeS7-UxzWtoe4n1uUUw52a1hwKvi8okuEqCSwmOFO38krw9W-au1EIA_r_o4dgsxm6bXgiT5wKHO_i_KXiv2J-MgOI8yL5IoLVzF2_SUJfKqNlW8z14F5rOhD4DT_MwW7-hvzYAxurN4laNZGHKtFHpmUErxvT7uhRt9egC2yRGDL4AkewAIskOrHPxezoTYxCmPSHzCJfFjXWq5YERhgRElro8y4giU"/>
+<span class="text-sm font-medium">Mike</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-primary">250.00 CRO</td>
+<td class="px-6 py-5 text-right font-mono text-secondary">50.00 CRO</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-500" data-icon="local_activity">local_activity</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="font-bold">Boat Party Tickets</span>
+<span class="text-[10px] text-slate-500 font-mono">Oct 22, 2026</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<img alt="Payer" class="w-6 h-6 rounded-full" data-alt="profile icon of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GbcQ4XQhHoLzsCdFI1HCYuKDQ7e5UzvVXq-9uHhrDec_5ntEk0RrZwQ-Z_Pj5PF5Ht3f-B40W2fwUIgFf5GSIYK8TkIvpgklkhiXV1uOUhnr_YzD14_XxhcadYrXRaNxxI8W7MnVQyma5a5V1QcbDnBUNxoZNJzFiwOb9MYF5oC0xvxodSmdglKQt6O2UQDgI0O5f05wJSbB6cTKnXwGCPU2NRh-MhVimWIs7q0xMlqSOafpZH7Vrm8svZZ8z4EYdtD3CqQU"/>
+<span class="text-sm font-medium">Alex</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-primary">44.50 CRO</td>
+<td class="px-6 py-5 text-right font-mono text-secondary">8.90 CRO</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="w-[45%] flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<h3 class="text-2xl font-syne font-bold">Member Balances</h3>
+<div class="grid grid-cols-1 gap-3">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl border-l-4 border-error/50">
+<div class="flex items-center gap-4">
+<img alt="Member" class="w-12 h-12 rounded-xl" data-alt="avatar of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbGFLaSUye60drWjaHCK5TfU-3aE-o9jxPhgoZ6pf5I-AG7Dg85Mx26w43JVa3VQY3b8BYZvqOGJrdmRdIWgjJsX-ffvWgbvFmxDp0WJ42rk7acjf5TXRdQMb_KSiIy1QASgrppJDXdmJCiowKsUZrWQd5la82J8F3_gVBVKAR_xLJwvoJ8u7xY4Opm4E68PlcmlMJfe6AQapAV-kDNFgnR5p2KtmTIUpQ7diUTPIkGXHU7ki7JO_Xgoz9ynm0UC7vkkUbGwJQ"/>
+<div class="flex flex-col">
+<span class="font-bold">Sarah</span>
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Owes others</span>
+</div>
+</div>
+<span class="text-lg font-mono font-bold text-error">-145.20 CRO</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl border-l-4 border-secondary/50">
+<div class="flex items-center gap-4">
+<img alt="Member" class="w-12 h-12 rounded-xl" data-alt="avatar of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8ZXZnA7AAZB9smmQK97jC3uQPdsXq2XmOHz6vY4oBss-Fg42ABM7MWdmL0ngvggLjgUY_iE7ANwVuTMn1fl-qI4XHBxN2Ax3auRNqjb1Bk5Pj5Uwxg734xMCj-ktAkl9y0dAEv-0eDdll6wCvRxth89_RDSJIU_2tYJBFzaQqtFfRxQOfe59t--H0mJxYNFUUvzQ7ub7wY9eWQES-ESjbf5cdpja6toQ9tGMP0b3b6isUxuhnXc6cMXWm_0X0n1cKHH3orx0l"/>
+<div class="flex flex-col">
+<span class="font-bold">Alex (You)</span>
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Is owed</span>
+</div>
+</div>
+<span class="text-lg font-mono font-bold text-secondary">+210.45 CRO</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl border-l-4 border-slate-700">
+<div class="flex items-center gap-4">
+<img alt="Member" class="w-12 h-12 rounded-xl" data-alt="avatar of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwFMtwIsYgH0Uaegq8ZIctGisb5Yl6fY3kOxS-F240WprM6wpVDm8V5Y8Uh_ntSUBiv4oGlsBbOgS9XRp-_les47yEo5MeIdhiJ8sOH2qIER657abQrMUE4_wlZIdWpNjlgv5T4sw8JgovC3vJt_ndOMaf2GfmJWo39es6l6p9T1UPw_2RNNlM-PxJ81gM_M2ViflwLYjFvelsy5ixlcFyfo6HCyxfs5S6sja4plgEBTbiRkCWYjqT200w92QCke7DAt_J1uRe"/>
+<div class="flex flex-col">
+<span class="font-bold">Mike</span>
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Balanced</span>
+</div>
+</div>
+<span class="text-lg font-mono font-bold text-slate-400">0.00 CRO</span>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/10 shadow-2xl">
+<h4 class="text-lg font-syne font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="account_tree">account_tree</span>
+                        Settlement Preview
+                    </h4>
+<div class="flex flex-col gap-6 relative">
+<div class="flex items-center justify-between relative z-10">
+<div class="flex flex-col items-center gap-2">
+<img alt="Member" class="w-14 h-14 rounded-full border-2 border-error/30 p-1" data-alt="avatar of sarah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo8GnKh8N1_T_BZckDbu23ucpGcPtgVKeVgOQqmoGyeAs6KjMEuJPg7Da5bFPC2wN-0CPARNQc5GOK9WXZ9Tyxe3djIPXlTnqZnNp6nMZMTqhx2sqt0tDem1z41tLAV0Z4VvazB_FPlK5zpN9U7BbZGxvdgAhWFf8Ad2zDGjJH81NDtxdPpX3XOZrrwpZoR55ahVOyj2hrdQaT411DSfGosJgDxsPEpgvQPSlnnqt3WEsejnIAP1GYo7ePhuG2IEN2jHxYQO54"/>
+<span class="text-xs font-mono font-bold">Sarah</span>
+</div>
+<div class="flex-1 px-4 flex flex-col items-center gap-1">
+<div class="w-full h-px bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+<span class="text-[10px] font-mono text-secondary px-3 py-0.5 bg-secondary/10 rounded-full">Pays 145.20 CRO</span>
+<div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+</div>
+<div class="flex flex-col items-center gap-2">
+<img alt="Member" class="w-14 h-14 rounded-full border-2 border-secondary/30 p-1" data-alt="avatar of alex" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfLebgMKaNll3J3_rFUlKNTPsIgH2gTSadFicXmk39HZbSb_ALzffkQpTM0wtYIjN-2WcfDc9VrA_ZscSDuh6Do1_IUakk6jUE26YZsEZ6yDtDlR33f4PiMwZ6zFPxhW2Ev7m3HgNvsd3YDmgH8sjjLdiAL0Fsns8tYXbq544CgFZlyYcuLhgb5_V4d8vMfNar41xuFg6oAk9WX8XI0ZhTTJHF_rrq5yO-KdBDymc2HhMtkIcMcMEzagxVKN4Tn2g0lUAWECrV"/>
+<span class="text-xs font-mono font-bold">Alex</span>
+</div>
+</div>
+<div class="flex items-center justify-between relative z-10 opacity-60">
+<div class="flex flex-col items-center gap-2">
+<img alt="Member" class="w-14 h-14 rounded-full border-2 border-error/30 p-1" data-alt="avatar of julie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJHMknUuNd2TnJ-9X9RighhW0Coxqy5QWO8JiOZj6kOfhIDL9cXdyjTlDngYNrLhll_jt520NnyOM2pYtiphj2e9kqgnC31rmn1iHcE4rlbWolAV-J5EmH0eW2rraLflk4MQ176OKQJYq0oYox4Gn7hJRPbHTkip6y5UUEuMIYhZB5q1CLajYkpKzAiNtxksSNtndfkdAEy67UJluR54G4BiI49EWK0Qrl5If7lIpxuDhg9ed8FGzxbyorbtOxtILlNcVU1Qkj"/>
+<span class="text-xs font-mono font-bold">Julie</span>
+</div>
+<div class="flex-1 px-4 flex flex-col items-center gap-1">
+<div class="w-full h-px bg-slate-700"></div>
+<span class="text-[10px] font-mono text-slate-500 px-3 py-0.5 bg-slate-800 rounded-full">Pays 65.25 CRO</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<img alt="Member" class="w-14 h-14 rounded-full border-2 border-secondary/30 p-1" data-alt="avatar of alex" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqql__JLBg7oPehaxNGo4Lw8rzldOBlqRcZHjGZX4TKKCbAX4wsRFanwtQWM4RpPjjmK6ja64-S0dewhizPBHpUhrO-ALw2k-g_KrOjBXhaSXLUQ48OqM6M06kPcj59gIdk8ULMBtWhB9W_jFLtrz7H_FvBTlaKhCbc765-PyIve5H8SeMw44_smS-r0vLDG9tCfeN0UVHPGMjxchfutYfjoD0wj-3FxkZH2MKvsVouqae_YlwUoZB2RwtlJttzTL0NwdcWYwb"/>
+<span class="text-xs font-mono font-bold">Alex</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-10 py-4 bg-secondary text-on-secondary font-headline font-black rounded-2xl shadow-lg shadow-secondary/10 hover:shadow-secondary/20 transition-all flex items-center justify-center gap-3">
+                        Execute Settlements
+                        <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+<p class="text-center mt-4 text-[10px] font-mono text-slate-500">Gas estimate: ~0.15 CRO</p>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-16 h-16 bg-gradient-to-br from-secondary to-secondary-container rounded-full flex items-center justify-center shadow-2xl text-on-secondary-container hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add" style="font-variation-settings: 'wght' 600;">add</span>
+</button>
+</div>
+</body></html>

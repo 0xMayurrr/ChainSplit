@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChainSplit - Goa Trip 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Syne:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#002e6a",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#d8e2ff",
+              "surface-container-highest": "#32343f",
+              "primary-fixed-dim": "#adc6ff",
+              "secondary-fixed": "#d3e4fe",
+              "tertiary-container": "#00a392",
+              "secondary": "#b7c8e1",
+              "secondary-container": "#3a4a5f",
+              "on-tertiary": "#003731",
+              "on-background": "#e0e2ef",
+              "inverse-on-surface": "#2d303a",
+              "tertiary-fixed": "#62fae3",
+              "on-primary-fixed-variant": "#004395",
+              "error": "#ffb4ab",
+              "tertiary": "#3cddc7",
+              "secondary-fixed-dim": "#b7c8e1",
+              "error-container": "#93000a",
+              "surface-dim": "#10131c",
+              "tertiary-fixed-dim": "#3cddc7",
+              "inverse-surface": "#e0e2ef",
+              "surface": "#10131c",
+              "background": "#10131c",
+              "on-error": "#690005",
+              "on-secondary": "#213145",
+              "on-tertiary-container": "#00302a",
+              "on-secondary-fixed": "#0b1c30",
+              "on-surface": "#e0e2ef",
+              "on-primary-container": "#00285d",
+              "surface-variant": "#32343f",
+              "surface-container-low": "#181b25",
+              "on-tertiary-fixed": "#00201c",
+              "primary": "#adc6ff",
+              "surface-container-lowest": "#0b0e17",
+              "on-tertiary-fixed-variant": "#005047",
+              "surface-container": "#1c1f29",
+              "on-secondary-fixed-variant": "#38485d",
+              "outline-variant": "#424754",
+              "surface-tint": "#adc6ff",
+              "on-surface-variant": "#c2c6d6",
+              "surface-container-high": "#272a34",
+              "on-secondary-container": "#a9bad3",
+              "primary-container": "#4d8eff",
+              "inverse-primary": "#005ac2",
+              "surface-bright": "#363943",
+              "outline": "#8c909f",
+              "on-primary-fixed": "#001a42"
+            },
+            fontFamily: {
+              "headline": ["Syne", "Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"],
+              "mono": ["IBM Plex Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #10131c;
+            color: #e0e2ef;
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(50, 52, 63, 0.4);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(173, 198, 255, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-surface">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen p-4 bg-[#10131c] border-r border-white/5 h-full w-64 fixed left-0 top-0 z-40 font-['Manrope'] font-medium">
+<div class="flex items-center gap-3 px-2 py-6 mb-8">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h1 class="text-[#adc6ff] font-['Space_Grotesk'] font-bold text-xl tracking-tighter">ChainSplit</h1>
+<p class="text-xs text-on-surface-variant opacity-60">Cronos Network</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#181b25] transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#adc6ff] bg-[#1c1f29] rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Groups</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#181b25] transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 hover:text-white hover:bg-[#181b25] transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 space-y-2">
+<button class="w-full py-3 px-4 bg-gradient-to-r from-tertiary to-tertiary-container text-on-tertiary font-bold rounded-xl shadow-lg hover:brightness-110 active:scale-95 transition-all">
+                Settle Now
+            </button>
+<div class="flex items-center justify-between px-2 pt-4">
+<a class="text-xs uppercase tracking-widest text-gray-500 hover:text-[#adc6ff]" href="#">Docs</a>
+<a class="text-xs uppercase tracking-widest text-gray-500 hover:text-[#adc6ff]" href="#">Support</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar (Shared) -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 max-w-none bg-[#32343f]/60 backdrop-blur-xl z-50 border-b border-white/10 shadow-[0_16px_32px_-12px_rgba(173,198,255,0.04)] md:pl-72">
+<div class="flex items-center gap-8">
+<div class="text-2xl font-black text-[#adc6ff] tracking-tighter font-['Space_Grotesk'] md:hidden">ChainSplit</div>
+<div class="hidden md:flex gap-6">
+<a class="text-[#adc6ff] border-b-2 border-[#adc6ff] pb-1 font-['Space_Grotesk'] font-bold tracking-tight" href="#">Dashboard</a>
+<a class="text-[#32343f] hover:text-[#adc6ff]/80 transition-colors font-['Space_Grotesk'] font-bold tracking-tight" href="#">Groups</a>
+<a class="text-[#32343f] hover:text-[#adc6ff]/80 transition-colors font-['Space_Grotesk'] font-bold tracking-tight" href="#">Activity</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container-lowest px-4 py-1.5 rounded-full border border-white/5">
+<span class="text-xs font-mono text-tertiary">1,250 CRO</span>
+</div>
+<div class="flex items-center gap-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-xs font-mono text-primary">0x...A42B</span>
+</div>
+<img alt="User Wallet Avatar" class="w-8 h-8 rounded-lg border border-white/10" data-alt="Geometric identicon avatar for a blockchain wallet user with teal and blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBewOWUhCY0Z_XesSjn7kTTh9zJ-Bw3hlksP2Wlo4LjfFVBP4WE9MRMJ7AOipcGjFlW9laNyLD4NKV6dbG76Xp-uezlAevaloo3HCWEXF3hgZShGH2l9GSCkdAruIP41U8vdfHt1H3N8fzu_h7IKHK33ngeQ5bnSSv1S7yBdyz3Sh08pX0WYOz1gTNDe1oOkvW6zS0Ziei61BpCMB1oBwYmp6ahi-SZpni7_bva5Filj8QBV_MwwlDdQXnfomTNjt8ZEu7S9-n-CMo"/>
+</div>
+</header>
+<main class="pt-24 pb-20 md:pl-64 min-h-screen">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Group Header Section -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-surface-container-high px-3 py-1 rounded-lg text-sm text-primary font-mono uppercase tracking-widest">Active Group</span>
+<span class="text-on-surface-variant/40 text-sm">•</span>
+<span class="text-on-surface-variant/60 text-sm font-mono">ID: CS-9921-X</span>
+</div>
+<h2 class="text-5xl md:text-6xl font-headline font-extrabold text-white mb-6 leading-tight">🏖 Goa Trip 2026</h2>
+<div class="flex flex-wrap items-center gap-6">
+<div class="flex -space-x-3">
+<img alt="Safna" class="w-12 h-12 rounded-full border-4 border-surface shadow-xl" data-alt="Minimalist illustrated avatar of a woman with glasses and dark hair on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4I5yuFJmBd2S60o8QVTbLUUeiw89jO4SEk9ytyWcnarHAtZO3E27s2_fdjwW3sJOHXVsnwTaBU9SHItdduzw_UfjQFrJJJmXnMggMlYileLdrfeF5RsbLeJ1qAkwrObp4pBQs2qsRZQ_Th95NlDnk5rJkvGHvuLCr6RDDrxJ4SAd-7b2isWZii4lk9q4yvVlAkac6KIgqOtCob57QsnTZAV4zZQlj389YPp3p9S1duWWy_dBdk67Z8JbSLGQbRimXRj5Z4v8QroI"/>
+<img alt="Mayur" class="w-12 h-12 rounded-full border-4 border-surface shadow-xl" data-alt="Minimalist illustrated avatar of a man with a beard and baseball cap on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOj53ULye8oTjmSKq3e3Bkx6zZQtq5tqbWrDLB9dbb02l8dM4SG_yAJ9gX17WONcIyG103ZeRbyWf7EqdipO4_LBDKpTsr19NJoXDGsXoayZcOY_1T7krNvQtyyUrTNW4aAJKGMa3z2BAeRGDFTdPDJ1jZNBdRNbVUPBi_QA3jsdP6LG4lnlzdpgziXD82b4Hvtxjl39MAEPkcpelfm3PBP-E8ARWl3GQieTr1DYQqovRpP_clKtIJtBIKyvHbMY8dRIf8qjkYPGU"/>
+<img alt="Leo" class="w-12 h-12 rounded-full border-4 border-surface shadow-xl" data-alt="Minimalist illustrated avatar of a man with short hair and a smile on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHxLy4sl8s_2P9PoUTzvMS5P7NZFzDmVEVy-MgmNC_1MyPzYqScb-MuX5cY-fH0xFKzX0l-bYfsUmr0P7PATcNYx5XdFa-6CTzDRMIz9yHdOzhtdnTTjeOdWj4fsWQiZh_sVz7jGYTdrPkMMbsl7Kl3sC9DzD6PMGm14Pu0J7c_oYOu-XEN9Um4sEdmAUxNkhH2rSxcBtbkTem0Lc9wIXJPaXsIU-vngULtDZQh-ZPYU0p3QcoTeRaeQlvDRn1NgVvfjkfXkRX7as"/>
+<img alt="Priya" class="w-12 h-12 rounded-full border-4 border-surface shadow-xl" data-alt="Minimalist illustrated avatar of a woman with long wavy hair and earrings on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADkC66MUZpIAs2JrTxW2HRoLo3lB5KHwpIv32-iCEZnFNt66XX3dMB9IgXeBxXx6TiGGKXqNQS5zz1MRRHnnvlvwdq_N38ev6jt1wgstsQUTMcyyR_lVIq0olc51g8brsE3z8ZW5kUmpOJ6BiEAj4T4Z1kik2t8hfFeVhgtHWpRFAf3SQeTIp36GcB8aDeFNOOsrM0w6AxiwiOd9JtULVfKvZPh_VqIYM4BiaJEsFHXlMORsccVz3BJyUvAR-CAVy7mUOWssvdzDk"/>
+</div>
+<div class="h-10 w-px bg-white/10"></div>
+<div class="bg-surface-container-low px-5 py-2 rounded-2xl flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<div>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant font-bold">Vault Balance</p>
+<p class="font-mono text-lg font-bold text-white">500 <span class="text-tertiary">CRO</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-4 bg-primary text-on-primary font-bold rounded-2xl hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span> Add Expense
+                    </button>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-4 glass-panel text-white font-bold rounded-2xl hover:bg-white/10 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span> Invite
+                    </button>
+</div>
+</section>
+<!-- Member Balance Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+<!-- Member 1 -->
+<div class="bg-surface-container rounded-3xl p-6 border border-white/5 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="account_circle">account_circle</span>
+</div>
+<div class="flex items-center gap-3 mb-6">
+<img alt="Safna" class="w-10 h-10 rounded-xl" data-alt="Abstract wallet identicon pattern in purple and blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFQ9oYfbA4FXY85bAmEFQZEQ91m6tXrF2lttRZYQLV-PVkdwqVyawhvOfNIOki51uU_jaA5BhGrHrZ39h1u6LLmSDLiJm5Zj8gF5Ac7gUkRRUeiBvTW1x54aYTVYaAFW5PuafI_PnDbedxKr-RmeMEx7oTpMxFsg7IZRKaMbPPh32hXFh70o8vHd_ftcgsdQoOyuE0FRiX4wtAmUM98m3FKash8xxutr4t-Yex4HnkmndCDh-vjl1tv9cFpih-r25JtyHWvHXaRm0"/>
+<div>
+<p class="font-bold text-white">Safna</p>
+<p class="text-[10px] font-mono text-on-surface-variant">0x7a...4e1c</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Contributed</span>
+<span class="font-mono text-sm">150 CRO</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Expense Share</span>
+<span class="font-mono text-sm">120 CRO</span>
+</div>
+<div class="pt-3 border-t border-white/5 flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Net</span>
+<span class="font-mono text-lg font-bold text-tertiary">+30 CRO</span>
+</div>
+</div>
+</div>
+<!-- Member 2 -->
+<div class="bg-surface-container rounded-3xl p-6 border border-white/5 relative overflow-hidden group">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Mayur" class="w-10 h-10 rounded-xl" data-alt="Abstract wallet identicon pattern in orange and gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUOC5jDyBRYOXbhomWDdT5z1tfnhftox917GVmnc3rhc5Dk56Z6sC3uP-1IgnXo6zMmHxzqsCVVh-XNqbcbd7_aL6AYFJK9QqU0IDnpZId_Hk2ij0O3-Xv3DyBXxp-UHpt6bR9C0ca29Vdw7f4RBJerZ2o4uR30L3eDtEYRLIRXdWvBi2jEc-DxuJaIHtMYqcuW2MzAd0tjseckx9503ogxGDTgc2tdFT9tgMfrYeupmtqF1hwAztSfx-BxpU_q9A0ajpA_R72DBY"/>
+<div>
+<p class="font-bold text-white">Mayur</p>
+<p class="text-[10px] font-mono text-on-surface-variant">0x3b...9a2d</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Contributed</span>
+<span class="font-mono text-sm">100 CRO</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Expense Share</span>
+<span class="font-mono text-sm">120 CRO</span>
+</div>
+<div class="pt-3 border-t border-white/5 flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Net</span>
+<span class="font-mono text-lg font-bold text-error">-20 CRO</span>
+</div>
+</div>
+</div>
+<!-- Member 3 -->
+<div class="bg-surface-container rounded-3xl p-6 border border-white/5 relative overflow-hidden group">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Leo" class="w-10 h-10 rounded-xl" data-alt="Abstract wallet identicon pattern in green and black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2QVnAXqw1_vFMytm8AxYLp555HQFDC8We3Jvl0s_cLiRjISzvo8K1Dg1kYY5_R2wEhbq-sg8KoqFYed-7gQiUa8MhYefqJSMPaWo4YmV8fkvW3RXhJURBlvs-0dbmC7ddhrsP1GgTmQBH8CKujjMhj7AQljtFFMM2eLBhAfenAZNgA_0AZn05rhRMjmfD8yTcBzNKgmVI2O_yyV4poFUoRTKcv68iW-qQW1E4Vqg9NRCqjszauyRBSID-M4VccEB_3HfqPFoo2n0"/>
+<div>
+<p class="font-bold text-white">Leo</p>
+<p class="text-[10px] font-mono text-on-surface-variant">0x1f...c882</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Contributed</span>
+<span class="font-mono text-sm">150 CRO</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Expense Share</span>
+<span class="font-mono text-sm">120 CRO</span>
+</div>
+<div class="pt-3 border-t border-white/5 flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Net</span>
+<span class="font-mono text-lg font-bold text-tertiary">+30 CRO</span>
+</div>
+</div>
+</div>
+<!-- Member 4 -->
+<div class="bg-surface-container rounded-3xl p-6 border border-white/5 relative overflow-hidden group">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Priya" class="w-10 h-10 rounded-xl" data-alt="Abstract wallet identicon pattern in yellow and pink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA-44ua-w30lA48rFMkiCF19Jdsqd9AWdnVwLAKgAO1XE78ZX08UZigP3tORyv0w2KOa3ZmO-gJW7zO7UUJ8gRa14k73K_0IOQmrxLAeCBnQ_zd36JSwQGjBFpZL7HrzS48EbRe3jfdQ4bq8F86pZ_aEzKIQx7Q-38gKmAzr7TmpwrCoxRnuKunycdy8jxOF6phXxqudq37xWFRmdcJ926Q1FnBa_aQ5N2nLElnwIyA5jHTAOcuU7skNcDay30Ap6nlfS6swUrzQM"/>
+<div>
+<p class="font-bold text-white">Priya</p>
+<p class="text-[10px] font-mono text-on-surface-variant">0x9d...fe33</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Contributed</span>
+<span class="font-mono text-sm">100 CRO</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Expense Share</span>
+<span class="font-mono text-sm">140 CRO</span>
+</div>
+<div class="pt-3 border-t border-white/5 flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Net</span>
+<span class="font-mono text-lg font-bold text-error">-40 CRO</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Expenses -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-2xl font-headline font-bold text-white">Expense History</h3>
+<div class="flex gap-2 p-1 bg-surface-container-low rounded-xl">
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg bg-surface-container-highest text-primary">All</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:text-white transition-colors">Food</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:text-white transition-colors">Stay</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:text-white transition-colors">Travel</button>
+</div>
+</div>
+<div class="bg-surface-container rounded-3xl overflow-hidden border border-white/5">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-high/50 border-b border-white/5">
+<tr>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Expense &amp; Category</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Paid By</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant text-right">Amount</th>
+<th class="px-6 py-4 w-10"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<!-- Row 1 -->
+<tr class="hover:bg-white/5 transition-colors cursor-pointer group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center text-xl">🍔</div>
+<div>
+<p class="font-bold text-white">Lunch at Beach Shack</p>
+<p class="text-[10px] text-on-surface-variant">Oct 24, 2026 • Food</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<img alt="Safna" class="w-6 h-6 rounded-md" data-alt="Wallet identicon for Safna" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1f6fTX3M2ytqWCf5ttSXP7WE-PpMLHxXGgO8IiSQECJYCwYQDKzesLYHggH4NhkMH3z30Fb8PEGbetZQD8CTPMRMaFwk3gZ7g42epMnMfhZOAKLMNNHka6gpqQhBMS0EX78VS9nKfoKZEvSR96t8g_FT7lzcmw4b8PLmf2Ym55v8ll8vAWgjuYgW9ZLr72gn7vPFh0zUu55mQ0fEE2NHf4G1wKooaCXUmfJfXx4DCVZGzkqbrotrooPlJl3J4faPzOmpnzOTccvQ"/>
+<span class="text-sm font-medium">Safna</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-white">120 <span class="text-primary text-xs opacity-60">CRO</span></td>
+<td class="px-6 py-5">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="expand_more">expand_more</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-white/5 transition-colors cursor-pointer group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center text-xl">🏨</div>
+<div>
+<p class="font-bold text-white">Villa Advance Payment</p>
+<p class="text-[10px] text-on-surface-variant">Oct 23, 2026 • Stay</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<img alt="Leo" class="w-6 h-6 rounded-md" data-alt="Wallet identicon for Leo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkbCyMSdYFrM_yUYZsb_czuBo0pPRfMwalYnRczLXBJivH-iXjXjJO7txo8kXMoKqf7zued-dChP-8ykk4V1ohFEcnOT6DI8tmcJhQ2Tj4utzAR7vLJ5SHvhArNwxZ3i_-bLbvxZlVlfXSwHx-Sfy2jUUMRLB80ITt1SaOCrOFgEpt1U8Pg5Ku6pdCs3U7sftaTs_LUcJ7kwJ4bIIjlLNQ20MFrRkqoHsyMQG9Z137GzjJJhix4hC1R_vacdHbVTPhL7ofSIHo0GY"/>
+<span class="text-sm font-medium">Leo</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-white">300 <span class="text-primary text-xs opacity-60">CRO</span></td>
+<td class="px-6 py-5">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-white/5 transition-colors cursor-pointer group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center text-xl">🎉</div>
+<div>
+<p class="font-bold text-white">Club Entry Tickets</p>
+<p class="text-[10px] text-on-surface-variant">Oct 25, 2026 • Fun</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<img alt="Priya" class="w-6 h-6 rounded-md" data-alt="Wallet identicon for Priya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdR9PHdPZ1hKLdtKnKilIgwaJiZMV4U_xxLodHR7EHEzEzXY6P68R7uVpKdUlJvYXSrKeVKU6XMt4f1PYdcV7hYJKRqGIybPld4ahDBIClyX0-9p4GxCzzpDSJUyOIrWQrb74vp_cHe-VujaxDiXgKyHFpb3WlUHFi1oB90rx-PakqnOH9jEylP_KlFEcEOwnabuwd4YN46UzmdgQxC5EWFJj0dOqw0OwJba_zBXiTXbeszCeGNYiEaN9rXKiB5O7Z6D2H-V3IIuU"/>
+<span class="text-sm font-medium">Priya</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-mono font-bold text-white">80 <span class="text-primary text-xs opacity-60">CRO</span></td>
+<td class="px-6 py-5">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: Settlement & Activity -->
+<div class="space-y-8">
+<!-- Settlement Preview -->
+<div class="bg-gradient-to-br from-[#1c1f29] to-[#10131c] rounded-3xl p-6 border border-white/5 shadow-2xl">
+<h3 class="text-xl font-headline font-bold text-white mb-6">Settlement Preview</h3>
+<div class="space-y-4 mb-8">
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
+<div class="flex items-center gap-3">
+<img alt="Safna" class="w-8 h-8 rounded-lg" data-alt="Wallet identicon for Safna" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfurPDz-iBi8_nG_XkewmFzSxcDwXvW-pLL-MIXlPQI8c2C4lwNzw5ngarNnKG7gvbiN2qZJ6sZ1pX_JLbSEblL4mYTw_uuzm6T56J-W3301WEWcyhvelFE4Us6q2JqsVOL21oAkq0-yEUfhBo4jh3JXNQh1N2TF3OlldUpUMW0DeXmivYj05jxKFeJVnuQLShDnqt5N0vQycGYjrbwWJABi6PgejyMXwyjbmZSqd-uLx6eNdKVD2qFF25WadCOdjMW0-iq2xsrKk"/>
+<span class="material-symbols-outlined text-tertiary" data-icon="arrow_forward">arrow_forward</span>
+<img alt="Mayur" class="w-8 h-8 rounded-lg" data-alt="Wallet identicon for Mayur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7nT44-cAf_UEiadM88flHLrR0TsyoWbQWV9VqhJ_NqhyZb7pvOLs96IxpmQRcUlrFfbc0l2cbLZ7UL_BJOECyMoFm4LwyRhSWy8wPPtN6hXWEc3X42Y-TKn2EoaV4k-g0tzBvi2rS2Qaq-AJT1HTz8L23rH1IraNSgfkRrHATvvyrniPe1YA18r-eSVtxRYPMrWdt1JYIBqKPZpye4zLrATq8hwZjdeDCtdlnc75v3m_8TcSho54MsqdHsSP1wMpi0-FwwkK80qg"/>
+</div>
+<span class="font-mono font-bold text-white">30 CRO</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
+<div class="flex items-center gap-3">
+<img alt="Leo" class="w-8 h-8 rounded-lg" data-alt="Wallet identicon for Leo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGgmVLqBVBw0HkP69Orv_ixelUgP1Vy3AWE0F9CPlzk1BFb83d421B_rhNsqIKKTnxrO5wDBZFiCWXR8uNx87pIoY48oUlLVweVUnrjSYYJwQCcMUzs8F44yed6lM6wRX_madpo50xqM5SugQxxToTFAQlkjQgz6n1CdA8BmIsgwx34hKn5yFUpNWQahPKZwryq87yoUT091gtZzJ9h9iVIIxyoqNJsjV9d69dQqAvTYCbXd43jXPHf28Cgsk3ycFXiQ87nTwrh4c"/>
+<span class="material-symbols-outlined text-tertiary" data-icon="arrow_forward">arrow_forward</span>
+<img alt="Priya" class="w-8 h-8 rounded-lg" data-alt="Wallet identicon for Priya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIHWlCrCJ8IP-YQOdw3n9SzFVIGqxgMkyGigGn04S8bjSAQMy-BFVKsLgX1xaR6g00x1WJOZn11NqF2z9XE1hGFUezCs2TYhdyTixIS0LBHN-9pRivgGXboOC9zOJ8DeOes60_zaFo6GnyKkrsiFd9PDi0YHTxdGsu06lHD0ys0EPSy6vOQuryFKTmlC79tjouGyNqcSVSOQO3B8mWtroGpifLaFQubJdv76oa8_2k5RXN-a6TWZ7ZcQQRXcwIWOx2CsC6EP-e2E4"/>
+</div>
+<span class="font-mono font-bold text-white">40 CRO</span>
+</div>
+</div>
+<button class="w-full py-4 bg-tertiary text-on-tertiary font-extrabold uppercase tracking-widest rounded-2xl shadow-[0_0_20px_rgba(60,221,199,0.3)] hover:brightness-110 active:scale-95 transition-all mb-4">
+                            Settle Now
+                        </button>
+<p class="text-[10px] text-center text-on-surface-variant opacity-50 font-mono">This triggers a smart contract settlement on Cronos.</p>
+</div>
+<!-- Vault Activity -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-headline font-bold text-white">Vault Activity</h3>
+<button class="text-xs text-primary font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-4 glass-panel rounded-2xl border border-white/5">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="input" style="font-variation-settings: 'FILL' 1;">input</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<p class="text-sm font-bold text-white">Deposit</p>
+<p class="text-xs font-mono text-tertiary">+500 CRO</p>
+</div>
+<div class="flex justify-between items-center mt-1">
+<p class="text-[10px] text-on-surface-variant font-mono">0x4a2b...f912</p>
+<p class="text-[10px] text-on-surface-variant">2h ago</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 glass-panel rounded-2xl border border-white/5 opacity-60">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="output" style="font-variation-settings: 'FILL' 1;">output</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<p class="text-sm font-bold text-white">Settlement</p>
+<p class="text-xs font-mono text-white">-120 CRO</p>
+</div>
+<div class="flex justify-between items-center mt-1">
+<p class="text-[10px] text-on-surface-variant font-mono">0x11e9...bb31</p>
+<p class="text-[10px] text-on-surface-variant">1d ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared) -->
+<footer class="w-full py-12 border-t border-white/5 bg-[#10131c] flex flex-col md:flex-row justify-between items-center px-8 font-['IBM_Plex_Mono'] text-xs uppercase tracking-widest text-[#adc6ff] md:pl-72">
+<div class="mb-8 md:mb-0">
+<span class="font-bold">ChainSplit</span>
+<span class="mx-2 text-gray-500">|</span>
+<span class="text-gray-500">© 2024 Built on Cronos.</span>
+</div>
+<div class="flex gap-6">
+<a class="text-gray-500 hover:text-[#adc6ff] transition-opacity" href="#">Terms</a>
+<a class="text-gray-500 hover:text-[#adc6ff] transition-opacity" href="#">Privacy</a>
+<a class="text-gray-500 hover:text-[#adc6ff] transition-opacity" href="#">Cronoscan</a>
+<a class="text-gray-500 hover:text-[#adc6ff] transition-opacity" href="#">Github</a>
+</div>
+</footer>
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container/80 backdrop-blur-xl border-t border-white/10 flex justify-around items-center py-4 z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px]">Groups</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-[10px]">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px]">Settings</span>
+</a>
+</nav>
+</body></html>

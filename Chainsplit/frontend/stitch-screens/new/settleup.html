@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChainSplit - Settle Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e0e2ef",
+                        "secondary": "#44e2cd",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "surface-dim": "#10131c",
+                        "on-tertiary": "#502400",
+                        "outline": "#8c909f",
+                        "on-primary-container": "#00285d",
+                        "inverse-primary": "#005ac2",
+                        "on-tertiary-fixed": "#311400",
+                        "inverse-on-surface": "#2d303a",
+                        "background": "#10131c",
+                        "primary-fixed": "#d8e2ff",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "primary": "#adc6ff",
+                        "surface-container-highest": "#32343f",
+                        "outline-variant": "#424754",
+                        "surface-variant": "#32343f",
+                        "surface": "#10131c",
+                        "on-surface-variant": "#c2c6d6",
+                        "tertiary-container": "#df7412",
+                        "surface-container-high": "#272a34",
+                        "on-surface": "#e0e2ef",
+                        "primary-container": "#4d8eff",
+                        "secondary-fixed": "#62fae3",
+                        "surface-container": "#1c1f29",
+                        "tertiary": "#ffb786",
+                        "secondary-container": "#03c6b2",
+                        "on-tertiary-container": "#461f00",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#181b25",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-secondary": "#003731",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffdcc6",
+                        "inverse-surface": "#e0e2ef",
+                        "surface-tint": "#adc6ff",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0b0e17",
+                        "surface-bright": "#363943",
+                        "on-secondary-fixed-variant": "#005047",
+                        "on-primary": "#002e6a",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-secondary-container": "#004d44",
+                        "on-secondary-fixed": "#00201c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"],
+                        "mono": ["IBM Plex Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(24, 27, 37, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen">
+<!-- SideNavBar Component -->
+<nav class="flex flex-col gap-8 py-10 px-6 h-full fixed left-0 top-0 h-screen w-72 rounded-r-none bg-[#181b25] z-50 shadow-[20px_0_40px_rgba(0,0,0,0.3)] font-['Space_Grotesk'] font-medium">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#adc6ff] to-[#44e2cd] flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#adc6ff] to-[#44e2cd]">ChainSplit</h1>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">Cronos Mainnet</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] transition-all duration-200 rounded-xl group" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-[#1c1f29] text-[#44e2cd] rounded-xl shadow-[inset_0_0_10px_rgba(68,226,205,0.1)] translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Groups</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] transition-all duration-200 rounded-xl group" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Activity</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] transition-all duration-200 rounded-xl group" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span>Profile</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+                New Split
+            </button>
+</div>
+</nav>
+<!-- TopNavBar (Small variant) -->
+<header class="flex justify-end items-center px-12 py-4 gap-6 w-full ml-72 sticky top-0 z-40 bg-[#10131c]/40 backdrop-blur-2xl font-['IBM_Plex_Mono'] text-xs text-[#44e2cd]">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-on-surface-variant font-mono">$4,290.50</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 hover:text-white cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-white cursor-pointer">settings</span>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-highest text-primary font-mono text-xs">0x71C...4f2a</button>
+</div>
+</div>
+</header>
+<main class="ml-72 p-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-12">
+<div class="flex items-center gap-2 text-primary mb-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="text-xs font-mono uppercase tracking-widest">Back to Group: Tokyo Trip 2024</span>
+</div>
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Settle Group Balances</h2>
+<p class="text-on-surface-variant mt-2 max-w-2xl">Algorithms have calculated the optimal number of transactions to resolve all debts within this group. Review the flow below and execute the smart contracts.</p>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left: Settlement Breakdown Table -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-6">
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-2xl">
+<div class="px-8 py-6 bg-surface-container border-b border-outline-variant/10 flex justify-between items-center">
+<h3 class="font-headline font-bold text-xl">Pending Settlements</h3>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-mono">4 Total Pathings</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-on-surface-variant text-xs uppercase tracking-widest font-mono">
+<th class="px-8 py-4 font-medium">From Member</th>
+<th class="px-8 py-4 font-medium">To Member</th>
+<th class="px-8 py-4 font-medium text-right">Amount</th>
+<th class="px-8 py-4 font-medium text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary scale-75">person</span>
+</div>
+<span class="font-mono text-sm">0x1234...5678</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary scale-75">person</span>
+</div>
+<span class="font-mono text-sm">0x9876...4321</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<span class="text-lg font-headline font-bold text-primary">142.50 CRO</span>
+</td>
+<td class="px-8 py-6 text-center">
+<button class="px-4 py-2 rounded-lg border border-outline-variant/20 text-xs font-bold hover:bg-surface-container-highest transition-all">Sign Tx</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary scale-75">person</span>
+</div>
+<span class="font-mono text-sm">0xAB12...EF34</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary scale-75">person</span>
+</div>
+<span class="font-mono text-sm">0x9876...4321</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<span class="text-lg font-headline font-bold text-primary">89.10 CRO</span>
+</td>
+<td class="px-8 py-6 text-center">
+<button class="px-4 py-2 rounded-lg border border-outline-variant/20 text-xs font-bold hover:bg-surface-container-highest transition-all">Sign Tx</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary scale-75">person</span>
+</div>
+<span class="font-mono text-sm">0x55CC...99AA</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary scale-75">person</span>
+</div>
+<span class="font-mono text-sm">0x71C...4f2a</span>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<span class="text-lg font-headline font-bold text-primary">24.00 CRO</span>
+</td>
+<td class="px-8 py-6 text-center">
+<button class="px-4 py-2 rounded-lg border border-outline-variant/20 text-xs font-bold hover:bg-surface-container-highest transition-all">Sign Tx</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Success Feedback Area (Conditional-looking) -->
+<div class="bg-secondary/5 border border-secondary/10 rounded-xl p-6 flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<p class="font-headline font-bold text-secondary">Optimal Settlement Path Found</p>
+<p class="text-sm text-on-surface-variant mt-1 leading-relaxed">Executing these settlements will reduce the group's total debt to <span class="text-secondary font-mono">0.00 CRO</span>. All members have approved the split calculations.</p>
+</div>
+</div>
+</div>
+<!-- Right: Visual Graph Representation -->
+<div class="col-span-12 lg:col-span-5">
+<div class="bg-surface-container-low rounded-xl h-full min-h-[500px] flex flex-col shadow-2xl relative overflow-hidden">
+<!-- Background texture/grid -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4d8eff 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
+<div class="px-8 py-6 bg-surface-container/50 border-b border-outline-variant/10 relative z-10">
+<h3 class="font-headline font-bold text-xl">Flow Visualization</h3>
+<p class="text-xs text-on-surface-variant font-mono uppercase tracking-tighter">Net Debt Vector Analysis</p>
+</div>
+<!-- Flow Graph Canvas (Simulated with HTML/CSS) -->
+<div class="flex-grow relative flex items-center justify-center p-12 overflow-hidden">
+<!-- Node: Receiver -->
+<div class="absolute right-12 top-1/2 -translate-y-1/2 z-20">
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary/20 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-20 h-20 rounded-full bg-surface-container-highest border-2 border-secondary flex flex-col items-center justify-center relative shadow-lg">
+<span class="material-symbols-outlined text-secondary">account_circle</span>
+<span class="text-[8px] font-mono mt-1">0x98...321</span>
+</div>
+<div class="absolute -top-4 -right-2 bg-secondary text-on-secondary px-2 py-0.5 rounded-full text-[10px] font-bold">RECEIVER</div>
+</div>
+</div>
+<!-- Node: Sender 1 -->
+<div class="absolute left-12 top-1/4 z-20">
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border border-primary/40 flex flex-col items-center justify-center relative shadow-md">
+<span class="material-symbols-outlined text-primary">person</span>
+<span class="text-[8px] font-mono mt-1">0x12...678</span>
+</div>
+</div>
+</div>
+<!-- Node: Sender 2 -->
+<div class="absolute left-24 bottom-1/4 z-20">
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border border-primary/40 flex flex-col items-center justify-center relative shadow-md">
+<span class="material-symbols-outlined text-primary">person</span>
+<span class="text-[8px] font-mono mt-1">0xAB...F34</span>
+</div>
+</div>
+</div>
+<!-- SVG Arrows (The "Flow") -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none">
+<defs>
+<lineargradient id="flowGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#adc6ff"></stop>
+<stop offset="100%" stop-color="#44e2cd"></stop>
+</lineargradient>
+</defs>
+<!-- Path 1 (Thick) -->
+<path class="opacity-80" d="M 120 180 Q 250 150 420 230" fill="transparent" stroke="url(#flowGrad)" stroke-dasharray="1 15" stroke-linecap="round" stroke-width="8"></path>
+<text class="font-mono text-[10px] font-bold" fill="#adc6ff" x="240" y="160">142.50 CRO</text>
+<!-- Path 2 (Medium) -->
+<path class="opacity-60" d="M 170 350 Q 300 380 430 280" fill="transparent" stroke="url(#flowGrad)" stroke-dasharray="1 10" stroke-linecap="round" stroke-width="4"></path>
+<text class="font-mono text-[10px] font-bold" fill="#adc6ff" x="270" y="380">89.10 CRO</text>
+</svg>
+<!-- Central Balance Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+<p class="text-[10px] text-on-surface-variant font-mono uppercase tracking-widest mb-1">Total Group Liquidity</p>
+<p class="text-3xl font-headline font-bold text-secondary">255.60 <span class="text-sm font-normal">CRO</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom: Execute All Settlements Button -->
+<div class="mt-12 sticky bottom-10">
+<div class="glass-panel p-2 rounded-2xl border border-outline-variant/20 shadow-2xl">
+<button class="w-full py-6 rounded-xl bg-gradient-to-r from-[#adc6ff] via-[#4d8eff] to-[#44e2cd] text-on-primary-fixed text-xl font-headline font-black tracking-tight uppercase flex items-center justify-center gap-4 hover:scale-[1.01] transition-transform group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">bolt</span>
+                    Execute All Settlements
+                    <span class="text-sm opacity-60 font-mono tracking-normal normal-case ml-4">(Estimated Gas: 0.0042 CRO)</span>
+</button>
+</div>
+</div>
+<!-- Extra Footer Detail -->
+<div class="mt-12 text-center pb-20">
+<p class="text-xs text-on-surface-variant font-mono max-w-md mx-auto">Transactions are bundled via ERC-4337 Account Abstraction for gas efficiency and one-click execution.</p>
+</div>
+</main>
+<!-- Floating status/legend for the graph -->
+<div class="fixed right-10 bottom-40 bg-surface-container-highest/80 backdrop-blur-lg border border-outline-variant/30 px-4 py-3 rounded-xl flex flex-col gap-2 shadow-xl">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold text-on-surface uppercase">Debtor</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-[10px] font-bold text-on-surface uppercase">Creditor</span>
+</div>
+<div class="mt-1 pt-1 border-t border-outline-variant/20">
+<p class="text-[9px] text-on-surface-variant leading-tight">Arrow thickness represents relative transaction volume.</p>
+</div>
+</div>
+</body></html>

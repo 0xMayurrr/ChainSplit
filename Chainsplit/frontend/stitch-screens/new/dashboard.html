@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChainSplit - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e0e2ef",
+                    "secondary": "#44e2cd",
+                    "secondary-fixed-dim": "#3cddc7",
+                    "surface-dim": "#10131c",
+                    "on-tertiary": "#502400",
+                    "outline": "#8c909f",
+                    "on-primary-container": "#00285d",
+                    "inverse-primary": "#005ac2",
+                    "on-tertiary-fixed": "#311400",
+                    "inverse-on-surface": "#2d303a",
+                    "background": "#10131c",
+                    "primary-fixed": "#d8e2ff",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#001a42",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "primary": "#adc6ff",
+                    "surface-container-highest": "#32343f",
+                    "outline-variant": "#424754",
+                    "surface-variant": "#32343f",
+                    "surface": "#10131c",
+                    "on-surface-variant": "#c2c6d6",
+                    "tertiary-container": "#df7412",
+                    "surface-container-high": "#272a34",
+                    "on-surface": "#e0e2ef",
+                    "primary-container": "#4d8eff",
+                    "secondary-fixed": "#62fae3",
+                    "surface-container": "#1c1f29",
+                    "tertiary": "#ffb786",
+                    "secondary-container": "#03c6b2",
+                    "on-tertiary-container": "#461f00",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#181b25",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-secondary": "#003731",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#ffdcc6",
+                    "inverse-surface": "#e0e2ef",
+                    "surface-tint": "#adc6ff",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0b0e17",
+                    "surface-bright": "#363943",
+                    "on-secondary-fixed-variant": "#005047",
+                    "on-primary": "#002e6a",
+                    "on-primary-fixed-variant": "#004395",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "on-secondary-container": "#004d44",
+                    "on-secondary-fixed": "#00201c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"],
+                    "mono": ["IBM Plex Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(28, 31, 41, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(173, 198, 255, 0.1);
+        }
+        .glow-secondary {
+            box-shadow: 0 0 20px rgba(68, 226, 205, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Sidebar Navigation -->
+<aside class="flex flex-col gap-8 py-10 px-6 h-full fixed left-0 top-0 bg-[#181b25] h-screen w-72 rounded-r-none shadow-[20px_0_40px_rgba(0,0,0,0.3)] z-50">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container font-bold" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#adc6ff] to-[#44e2cd] font-headline tracking-tighter">ChainSplit</h1>
+<p class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">Cronos Mainnet</p>
+</div>
+</div>
+<button class="w-full py-4 px-6 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg hover:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>New Split</span>
+</button>
+<nav class="flex flex-col gap-2 mt-4 font-['Space_Grotesk'] font-medium">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-4 px-4 py-3 bg-[#1c1f29] text-[#44e2cd] rounded-xl shadow-[inset_0_0_10px_rgba(68,226,205,0.1)] translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Groups</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Activity</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-slate-200 hover:bg-[#1c1f29] rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-lowest rounded-xl flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+<img alt="User Wallet Avatar" data-alt="minimalist geometric pixelated identicon avatar with blue and teal colors on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMWUPiB3vKT3OUgyF8jGI7SatOGA8y6pyd7h-t_oE52fFd961JN9JVd4gbfncbnqM4vk6vCxvPjB32kTiGJg8g_YLsq7_y7ZIk4bGBPUFcgBWK-SmvZNGbXH_eylShrktWqURtywxUb-R1rm9GrybY-CQwUkeQCsj8y25WlU7upwayUmgH0GflfCaqtT9QI-V1p1JLuzF7tI4m2j5wHk1BVj8u6yAxV5MZfG-gyd6Bj7kIzyw-J-JEL_R1te9DSOjXbd5qrcR2"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-mono text-on-surface truncate">0x71C...4f2a</p>
+<p class="text-[10px] text-secondary font-mono">$4,290.50</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen">
+<!-- Top Toolbar -->
+<header class="flex justify-between items-center px-12 py-8 sticky top-0 bg-[#10131c]/40 backdrop-blur-2xl z-40">
+<div class="flex flex-col">
+<h2 class="text-2xl font-headline font-bold tracking-tight text-on-surface">Good morning, <span class="text-primary">0xMayu...</span></h2>
+<p class="text-slate-400 text-sm">Welcome back to your financial vault.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/20"></div>
+<div class="flex flex-col items-end">
+<p class="font-mono text-xs text-secondary">0x71C...4f2a</p>
+<p class="font-mono text-[10px] text-slate-500">$4,290.50</p>
+</div>
+</div>
+</header>
+<section class="px-12 pb-12 space-y-8">
+<!-- Hero Banner -->
+<div class="relative overflow-hidden rounded-3xl p-10 bg-surface-container-low border border-outline-variant/10 group">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] group-hover:bg-secondary/20 transition-all duration-700"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-end md:items-center">
+<div>
+<p class="text-slate-400 font-medium mb-1">Net Balance Overview</p>
+<h3 class="text-5xl font-headline font-black text-secondary tracking-tighter">
+                            +45.50 <span class="text-2xl font-mono align-middle">CRO</span>
+</h3>
+<p class="mt-2 text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary scale-75" data-icon="trending_up">trending_up</span>
+                            owed to you across 4 active groups
+                        </p>
+</div>
+<div class="flex gap-3 mt-6 md:mt-0">
+<button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface font-semibold hover:bg-surface-bright transition-colors">
+                            View Details
+                        </button>
+<button class="px-6 py-3 rounded-full bg-secondary text-on-secondary font-bold hover:opacity-90 transition-opacity glow-secondary">
+                            Settle Now
+                        </button>
+</div>
+</div>
+</div>
+<!-- Quick Stats Bento -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/5">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+<span class="text-[10px] font-mono text-slate-500">Live</span>
+</div>
+<p class="text-3xl font-headline font-bold">12</p>
+<p class="text-sm text-slate-400">Total Groups</p>
+</div>
+<div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/5">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="pending_actions">pending_actions</span>
+<span class="text-[10px] font-mono text-tertiary">3 Priority</span>
+</div>
+<p class="text-3xl font-headline font-bold">07</p>
+<p class="text-sm text-slate-400">Pending Settlements</p>
+</div>
+<div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/5">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="bar_chart">bar_chart</span>
+<span class="text-[10px] font-mono text-secondary">-12%</span>
+</div>
+<p class="text-3xl font-headline font-bold font-mono">1.2k</p>
+<p class="text-sm text-slate-400">Monthly Spend (CRO)</p>
+</div>
+<div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/5 ring-1 ring-secondary/20">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="account_balance">account_balance</span>
+<span class="text-[10px] font-mono text-secondary">Receivable</span>
+</div>
+<p class="text-3xl font-headline font-bold font-mono text-secondary">+312.4</p>
+<p class="text-sm text-slate-400">You're Owed</p>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column (60%): My Groups -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<div class="flex justify-between items-center px-2">
+<h4 class="text-xl font-headline font-bold">My Groups</h4>
+<a class="text-primary text-sm font-medium hover:underline" href="#">See All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="glass-card p-6 rounded-2xl group hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-8">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest overflow-hidden">
+<img alt="Goa Trip" data-alt="scenic beach at sunset with palm trees and calm blue water in a tropical holiday destination" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLIUHP9rTORVEqHqW499LXd7WUgKQ0pQ2CkGiZvUovugOVXFeUGh5T-h_2OtriF9Lx_N38bNwMV059Jd4A61MZtqHnjnrGXogZZkX7neTf6Hu9PJzdigfJZbe2FTqvgPzNlCg9Pv1qN1Ro-Hy4c3pnjWjMBVbkc1YNVVjODzHUR_d9JtrIlRBX-DW3We_xM8JDv0JtL0RM3u0kwxFdxgeqUY3pCSIRUeN2PKG7coLJZznOuDOYjGEfUcUZm5CyxJW2kEwp6ByV"/>
+</div>
+<span class="px-3 py-1 rounded-full text-[10px] font-mono bg-secondary/10 text-secondary border border-secondary/20">Active</span>
+</div>
+<h5 class="text-lg font-headline font-bold mb-1">Goa Trip</h5>
+<p class="text-sm text-slate-400 mb-6">4 Members · 8 Pending</p>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-mono tracking-tighter">Your Balance</p>
+<p class="text-xl font-mono text-secondary">+12.40 CRO</p>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-600"></div>
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-500"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-6 rounded-2xl group hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-8">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest overflow-hidden">
+<img alt="Chennai Flat" data-alt="modern luxury apartment interior with minimalist furniture and large windows overlooking a city skyline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmZKLPEeA684z7XYchb3aLTjA9q4ofgPog95Ovhp8W2iIz_SlZzLyVVWDuLZHj_jtcEIKgeLk2ap_Lm2Fd6l4vqcOZ0HVBYeW43HabmM2TrD8zXcvS_wB6sazIhf5z8Ii441i3v5p75kAmErQKYJxjsfUeVdpzJhROcPFX6l4XLkUEv2Evjd1_NSKXR8f_bPz9w5Nskn3NogPv5LfIixvAlZuPihhnv9sf3h59mLNv7JhKBqoHyaMwA_c9MN5oAms88yWch_ox"/>
+</div>
+<span class="px-3 py-1 rounded-full text-[10px] font-mono bg-primary/10 text-primary border border-primary/20">Monthly</span>
+</div>
+<h5 class="text-lg font-headline font-bold mb-1">Chennai Flat</h5>
+<p class="text-sm text-slate-400 mb-6">3 Members · Rent &amp; Utils</p>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-mono tracking-tighter">Your Balance</p>
+<p class="text-xl font-mono text-error">-4.20 CRO</p>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-600"></div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-6 rounded-2xl group hover:border-primary/30 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-8">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest overflow-hidden">
+<img alt="Office Lunch" data-alt="delicious assorted italian food on a long wooden table in a brightly lit modern restaurant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWleEhYn4zyKwVYKRSD1uiuQrunRJNFlWflryYBoY4xnHE1ZNLKBtw7fvzBSGp4eG3r_p3ruQGU8QhhwBqpAkLLgZdPLxN1SsEQjRUX7k5GlXSA97mwZDHxP4Um2S3lGExPcvUpB7gmMplVx7P7rVgTTk3iU4VJYS6oU8JVte_vsR-J-AhDScqHGItt24kCsI7uofQGVA78NQ5iwZ3HkuyIqsnbYdKfnDq27HTBQbH9RID1P0nHaqqFWkvEds0_x8VkmKIk2F0"/>
+</div>
+<span class="px-3 py-1 rounded-full text-[10px] font-mono bg-slate-800 text-slate-400 border border-slate-700">Recent</span>
+</div>
+<h5 class="text-lg font-headline font-bold mb-1">Office Lunch</h5>
+<p class="text-sm text-slate-400 mb-6">12 Members · Quick Split</p>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-mono tracking-tighter">Your Balance</p>
+<p class="text-xl font-mono text-on-surface">0.00 CRO</p>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-600"></div>
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-500"></div>
+<div class="w-6 h-6 rounded-full ring-2 ring-surface bg-slate-400 flex items-center justify-center text-[8px] font-bold">+9</div>
+</div>
+</div>
+</div>
+<!-- Add New Group Placeholder -->
+<div class="border-2 border-dashed border-outline-variant/20 rounded-2xl flex flex-col items-center justify-center p-6 hover:bg-white/5 transition-all cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-slate-500" data-icon="add">add</span>
+</div>
+<p class="mt-4 font-headline font-bold text-slate-400">Create New Group</p>
+</div>
+</div>
+</div>
+<!-- Right Column (40%): Recent Activity -->
+<div class="col-span-12 lg:col-span-5 space-y-6">
+<div class="flex justify-between items-center px-2">
+<h4 class="text-xl font-headline font-bold">Recent Activity</h4>
+<button class="text-slate-400 hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-3xl p-2">
+<!-- Activity Timeline Item 1 -->
+<div class="relative pl-12 pr-6 py-6 group hover:bg-surface-container transition-colors rounded-2xl">
+<!-- Line -->
+<div class="absolute left-[23px] top-10 bottom-0 w-[2px] bg-outline-variant/20 group-last:hidden"></div>
+<!-- Dot -->
+<div class="absolute left-4 top-8 w-4 h-4 rounded-full border-2 border-secondary bg-surface z-10"></div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-on-surface">Settle: Goa Trip</p>
+<p class="text-xs text-slate-500 mt-1">You paid <span class="text-on-surface">0x8a2...3f12</span></p>
+</div>
+<p class="text-sm font-mono text-error">-15.50 CRO</p>
+</div>
+<p class="text-[10px] font-mono text-slate-600 mt-3 uppercase tracking-tighter">2 mins ago · Tx: 0x98f2...ae42</p>
+</div>
+<!-- Activity Timeline Item 2 -->
+<div class="relative pl-12 pr-6 py-6 group hover:bg-surface-container transition-colors rounded-2xl">
+<div class="absolute left-[23px] top-10 bottom-0 w-[2px] bg-outline-variant/20 group-last:hidden"></div>
+<div class="absolute left-4 top-8 w-4 h-4 rounded-full border-2 border-primary bg-surface z-10"></div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-on-surface">Expense Added: Office Lunch</p>
+<p class="text-xs text-slate-500 mt-1">Split 12 ways for <span class="text-on-surface">"Artisan Pizza"</span></p>
+</div>
+<p class="text-sm font-mono text-slate-400">0.85 CRO</p>
+</div>
+<p class="text-[10px] font-mono text-slate-600 mt-3 uppercase tracking-tighter">2 hours ago</p>
+</div>
+<!-- Activity Timeline Item 3 -->
+<div class="relative pl-12 pr-6 py-6 group hover:bg-surface-container transition-colors rounded-2xl">
+<div class="absolute left-[23px] top-10 bottom-0 w-[2px] bg-outline-variant/20 group-last:hidden"></div>
+<div class="absolute left-4 top-8 w-4 h-4 rounded-full border-2 border-secondary bg-surface z-10"></div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-on-surface">Payment Received</p>
+<p class="text-xs text-slate-500 mt-1"><span class="text-on-surface">0x7d1...90ab</span> settled their share</p>
+</div>
+<p class="text-sm font-mono text-secondary">+48.00 CRO</p>
+</div>
+<p class="text-[10px] font-mono text-slate-600 mt-3 uppercase tracking-tighter">Yesterday · Tx: 0x21c4...670e</p>
+</div>
+<!-- Activity Timeline Item 4 -->
+<div class="relative pl-12 pr-6 py-6 group hover:bg-surface-container transition-colors rounded-2xl">
+<div class="absolute left-4 top-8 w-4 h-4 rounded-full border-2 border-tertiary bg-surface z-10"></div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-semibold text-on-surface">New Group: Bangalore Meetup</p>
+<p class="text-xs text-slate-500 mt-1">You were added by <span class="text-on-surface">0x12e...fe2a</span></p>
+</div>
+<span class="material-symbols-outlined text-slate-500 text-sm" data-icon="chevron_right">chevron_right</span>
+</div>
+<p class="text-[10px] font-mono text-slate-600 mt-3 uppercase tracking-tighter">2 days ago</p>
+</div>
+</div>
+<!-- Analytics Teaser -->
+<div class="bg-gradient-to-br from-primary-container/20 to-transparent p-6 rounded-3xl border border-primary/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+<p class="text-sm font-bold text-primary tracking-tight">Spending Insights</p>
+</div>
+<p class="text-xs text-slate-400 leading-relaxed mb-4">You've saved <span class="text-secondary font-mono">15%</span> on gas fees this month by batch-settling transactions. Keep it up!</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-10 right-10 w-16 h-16 rounded-full bg-secondary text-on-secondary shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 glow-secondary">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add_card">add_card</span>
+</button>
+</body></html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e0e2ef",
+                    "secondary": "#44e2cd",
+                    "secondary-fixed-dim": "#3cddc7",
+                    "surface-dim": "#10131c",
+                    "on-tertiary": "#502400",
+                    "outline": "#8c909f",
+                    "on-primary-container": "#00285d",
+                    "inverse-primary": "#005ac2",
+                    "on-tertiary-fixed": "#311400",
+                    "inverse-on-surface": "#2d303a",
+                    "background": "#10131c",
+                    "primary-fixed": "#d8e2ff",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#001a42",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "primary": "#adc6ff",
+                    "surface-container-highest": "#32343f",
+                    "outline-variant": "#424754",
+                    "surface-variant": "#32343f",
+                    "surface": "#10131c",
+                    "on-surface-variant": "#c2c6d6",
+                    "tertiary-container": "#df7412",
+                    "surface-container-high": "#272a34",
+                    "on-surface": "#e0e2ef",
+                    "primary-container": "#4d8eff",
+                    "secondary-fixed": "#62fae3",
+                    "surface-container": "#1c1f29",
+                    "tertiary": "#ffb786",
+                    "secondary-container": "#03c6b2",
+                    "on-tertiary-container": "#461f00",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-low": "#181b25",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-secondary": "#003731",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#ffdcc6",
+                    "inverse-surface": "#e0e2ef",
+                    "surface-tint": "#adc6ff",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0b0e17",
+                    "surface-bright": "#363943",
+                    "on-secondary-fixed-variant": "#005047",
+                    "on-primary": "#002e6a",
+                    "on-primary-fixed-variant": "#004395",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "on-secondary-container": "#004d44",
+                    "on-secondary-fixed": "#00201c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"],
+                    "mono": ["IBM Plex Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #080B14;
+            color: #e0e2ef;
+            font-family: 'Manrope', sans-serif;
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(173, 198, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(173, 198, 255, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .glass-card {
+            background: rgba(28, 31, 41, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(173, 198, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- Subtle Animated Grid Background -->
+<div class="fixed inset-0 grid-bg pointer-events-none z-0"></div>
+<div class="fixed inset-0 bg-gradient-to-tr from-[#080B14] via-transparent to-primary/5 pointer-events-none z-0"></div>
+<!-- Navigation Shell -->
+<nav class="w-full top-0 bg-gradient-to-b from-[#10131c] to-transparent sticky z-50">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-10 py-8">
+<div class="text-2xl font-black text-[#adc6ff] tracking-tighter font-headline">
+                ChainSplit
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-400 font-medium hover:text-[#44e2cd] transition-colors duration-300 font-headline" href="#">Solutions</a>
+<a class="text-slate-400 font-medium hover:text-[#44e2cd] transition-colors duration-300 font-headline" href="#">Ecosystem</a>
+<a class="text-slate-400 font-medium hover:text-[#44e2cd] transition-colors duration-300 font-headline" href="#">Security</a>
+<a class="text-slate-400 font-medium hover:text-[#44e2cd] transition-colors duration-300 font-headline" href="#">Docs</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed px-6 py-2.5 rounded-xl font-bold font-headline scale-95 transition-transform hover:scale-100 shadow-lg shadow-primary/20">
+                Connect Wallet
+            </button>
+</div>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-10 pt-20 pb-32 grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-mono font-medium tracking-wider">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+                    LIVE ON CRONOS MAINNET
+                </div>
+<h1 class="text-6xl md:text-8xl font-black font-headline tracking-tighter leading-[0.9] text-on-surface">
+                    Split Bills. <br/>
+<span class="text-primary">No Drama.</span> <br/>
+                    No Middlemen.
+                </h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed font-body">
+                    Group vaults on Cronos. Smart contract escrow. 1% fee. Always. Experience the future of collaborative finance without the trust issues.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed rounded-xl font-bold font-headline text-lg hover:shadow-[0_0_30px_rgba(173,198,255,0.3)] transition-all">
+                        Launch App
+                    </button>
+<button class="px-8 py-4 glass-card text-on-surface rounded-xl font-bold font-headline text-lg hover:bg-white/5 transition-all">
+                        View Contracts
+                    </button>
+</div>
+</div>
+<!-- Floating 3D Mockup -->
+<div class="relative group">
+<div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2rem] blur-3xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+<div class="relative glass-card rounded-[2rem] p-4 shadow-2xl overflow-hidden aspect-square flex items-center justify-center">
+<img alt="ChainSplit Dashboard Mockup" class="rounded-[1.5rem] w-full h-full object-cover" data-alt="futuristic 3d web3 dashboard interface floating in dark space with translucent glass panels and neon holographic crypto data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2NRVPNqSHE4PUMJXQ4p_TMT7Lr_Mgil6x4fHEJGDPTObZjQGG64scBU1ndPGGDoP2RayXeinbUGdPaPkpKz-O_kegUlKS2irXgU2EuLrSoaiXIJsX_RcKMFeQFuomue2C_dZAdfEeYUYVRUwXvChSWLeGdGtyGP9rzi5MjKCIYvI3_Ilg0Y10BYb5VTs6PCGatae9_JX8_oNXypvVhqFy_piWW8mLAfUhcAYbpPMcKiH8KxCcMhdx_icXV564-WoZwwouW9f7"/>
+<!-- Floating Overlay elements for "3D" effect -->
+<div class="absolute top-12 -right-6 glass-card p-4 rounded-xl shadow-xl max-w-[200px] border-secondary/30">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-mono text-xs text-secondary-fixed">0x71C...4f2a</span>
+</div>
+<div class="text-lg font-headline font-bold text-white tracking-tight">4,290.50 CRO</div>
+</div>
+<div class="absolute bottom-12 -left-8 glass-card p-6 rounded-2xl shadow-xl border-primary/30">
+<div class="text-[10px] font-mono text-primary uppercase tracking-widest mb-1">Recent Settlement</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<div>
+<div class="text-sm font-bold font-headline">Swiss Trip Split</div>
+<div class="text-xs text-slate-400">12 members • 450 CRO each</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Row -->
+<section class="max-w-7xl mx-auto px-10 py-16">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="space-y-1">
+<div class="text-slate-500 font-mono text-xs uppercase tracking-widest">Total Settled</div>
+<div class="text-3xl font-black font-headline text-on-surface">$12.4M+</div>
+</div>
+<div class="space-y-1">
+<div class="text-slate-500 font-mono text-xs uppercase tracking-widest">Active Groups</div>
+<div class="text-3xl font-black font-headline text-on-surface">1,842</div>
+</div>
+<div class="space-y-1">
+<div class="text-slate-500 font-mono text-xs uppercase tracking-widest">Protocol Fee</div>
+<div class="text-3xl font-black font-headline text-secondary">1.0%</div>
+</div>
+<div class="space-y-1">
+<div class="text-slate-500 font-mono text-xs uppercase tracking-widest">Avg Settlement</div>
+<div class="text-3xl font-black font-headline text-on-surface">&lt; 12s</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="max-w-7xl mx-auto px-10 py-32">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl md:text-5xl font-black font-headline tracking-tighter mb-6">Split with Confidence.</h2>
+<p class="text-on-surface-variant text-lg">We've removed the social friction of asking for money back. Smart contracts handle the math and the movement.</p>
+</div>
+<div class="font-mono text-xs text-slate-500 uppercase tracking-widest border-b border-slate-800 pb-2">
+                    03 Steps to Freedom
+                </div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="group glass-card p-10 rounded-[2rem] hover:bg-surface-container-high transition-all duration-500 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">Connect Wallet</h3>
+<p class="text-on-surface-variant leading-relaxed mb-10 flex-grow">Securely link your Cronos-compatible wallet. No signup, no personal data, just your keys.</p>
+<div class="text-primary font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        01 / STEP <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group glass-card p-10 rounded-[2rem] hover:bg-surface-container-high transition-all duration-500 flex flex-col h-full relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-3xl -mr-16 -mt-16"></div>
+<div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">token</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">Fund Group Vault</h3>
+<p class="text-on-surface-variant leading-relaxed mb-10 flex-grow">Create a shared vault for your trip or dinner. Deposit CRO or stablecoins directly into the smart contract.</p>
+<div class="text-secondary font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        02 / STEP <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group glass-card p-10 rounded-[2rem] hover:bg-surface-container-high transition-all duration-500 flex flex-col h-full">
+<div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">flash_on</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4">Settle Instantly</h3>
+<p class="text-on-surface-variant leading-relaxed mb-10 flex-grow">One-click settlement. The smart contract calculates the delta and distributes funds automatically.</p>
+<div class="text-tertiary font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                        03 / STEP <span class="material-symbols-outlined text-sm">done_all</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento CTA Section -->
+<section class="max-w-7xl mx-auto px-10 pb-32">
+<div class="bg-surface-container-low rounded-[2.5rem] overflow-hidden p-12 md:p-20 relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-30 pointer-events-none">
+<img alt="Abstract visual" class="w-full h-full object-cover" data-alt="abstract crystalline nodes interconnected by thin glowing lines of light against an deep obsidian background with soft blue highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9_JOnRTPlEXJ4qLPGDnEiD9jGVKq3pdVctLdmsGGxeI0oGQbZM2syGW9XBfMjusZo8QC0wJng_pmqUSlUO-iY8YcpHLBZuftJ3K5ngHr4wdluc_D6mKI7PQs4GfexusYspNaxKGxERVQehHmzDIuOF1q35Rs-6NbB0NdBtSEvbaDfV9mQu2KTeZy_u3dZsAkD6NyHvr4nrhkdlmXe7IZAeSGfLhulYOmSYzixKz-IwGzehf7WzK0ZnR2mYzgC-GVf4sEMTB63"/>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-4xl md:text-6xl font-black font-headline tracking-tighter leading-[1.1] mb-8">Ready to split with the power of Cronos?</h2>
+<div class="flex flex-wrap gap-4">
+<button class="px-10 py-5 bg-on-surface text-surface font-black font-headline text-xl rounded-xl hover:scale-105 transition-transform">
+                            Open Dashboard
+                        </button>
+<div class="flex items-center gap-4 px-6">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-slate-800 flex items-center justify-center text-[10px] font-bold">JD</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-slate-700 flex items-center justify-center text-[10px] font-bold">ML</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-slate-600 flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+<div class="text-sm font-medium text-slate-400">Join 50k+ users</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-20 relative z-10">
+<div class="max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="space-y-6">
+<div class="text-3xl font-black text-primary tracking-tighter font-headline">ChainSplit</div>
+<p class="text-slate-500 max-w-xs font-body leading-relaxed">
+                    Financial autonomy for the social era. Decentralized bill splitting built on the high-performance Cronos blockchain.
+                </p>
+<div class="flex items-center gap-3 py-2 px-4 bg-surface-container rounded-full w-fit">
+<img alt="Cronos Logo" class="w-6 h-6" data-alt="minimalist cronos network logo icon with sleek blue geometric design on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn6a1ogWPtIj0GZN8gPMmDfIbfefG2j51K8ppkEqu6ng8i7HyVi7JdbXGkCK7_zHKfz-yL8W0-h2mnSov2rc7Bc3XTSkxJpJnvkiDADzpJjBE-8eEDyQFyAQJGboZo69hN2H5k9A5PjsvzUW5w9w8iedbWXR1PhhiwnwFg2FnhsOr7txi5WanHcODpi3pUCwcVLVnH9x34RVhAtXLHcbVsvtM75GA7XzUzpxaLh8uWvhKyJXjb0rdYHml6yn2-5mHQnXbbwhlz"/>
+<span class="text-xs font-mono font-bold text-on-surface-variant">Built on Cronos</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="space-y-4">
+<div class="text-on-surface font-headline font-bold">Product</div>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Vaults</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Security</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Fees</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="text-on-surface font-headline font-bold">Developers</div>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Github</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Smart Contracts</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="text-on-surface font-headline font-bold">Company</div>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-10 mt-20 pt-10 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-slate-600 text-xs font-mono">© 2024 CHAINSPLIT PROTOCOL. NO RIGHTS RESERVED. IT'S THE BLOCKCHAIN.</div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">code</span></a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</footer>
+</body></html>

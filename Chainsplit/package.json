@@ -1,0 +1,22 @@
+{
+  "name": "chainsplit",
+  "version": "1.0.0",
+  "description": "ChainSplit — decentralized expense splitting on Cronos",
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:testnet": "node --loader ts-node/esm scripts/deploy.ts",
+    "deploy:mainnet": "CRONOS_TESTNET_RPC_URL=$CRONOS_RPC_URL node --loader ts-node/esm scripts/deploy.ts",
+    "clean": "hardhat clean"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.7",
+    "@types/node": "^20.0.0",
+    "dotenv": "^16.4.0",
+    "ethers": "^6.16.0",
+    "hardhat": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: chainsplit-api
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: NETWORK
+        value: testnet
+      - key: CRONOS_TESTNET_RPC_URL
+        value: https://evm-t3.cronos.org
+      - key: CRONOS_RPC_URL
+        value: https://evm.cronos.org
+      - key: FACTORY_ADDRESS
+        sync: false
+      - key: FACTORY_ADDRESS_MAINNET
+        sync: false
+      - key: PINATA_API_KEY
+        sync: false
+      - key: PINATA_API_SECRET
+        sync: false
+      - key: PINATA_JWT
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
