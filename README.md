@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="frontend\public\Geometric_Chain_Link_Logo_Design-removebg-preview.png" alt="ChainSplit" width="96" height="96" />
+  <img src="https://raw.githubusercontent.com/0xMayurrr/ChainSplit/main/Chainsplit/frontend/public/Geometric_Chain_Link_Logo_Design-removebg-preview.png" alt="ChainSplit" width="96" height="96" />
 </p>
 
 <h1 align="center">ChainSplit</h1>
