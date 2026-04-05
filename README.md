@@ -1,109 +1,77 @@
-<div align="center">
+<p align="center">
+  <img src="YOUR_LOGO_URL" alt="ChainSplit" width="96" height="96" />
+</p>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:002D74,50:0052CC,100:00A3FF&height=200&section=header&text=⛓️%20ChainSplit&fontSize=60&fontColor=ffffff&fontAlignY=38&desc=Decentralized%20Expense%20Splitting%20on%20Cronos&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
+<h1 align="center">ChainSplit</h1>
 
-<br/>
+<p align="center">
+  Decentralized expense splitting on Cronos. No middlemen. No trust issues. Just code.
+</p>
 
-[![Built on Cronos](https://img.shields.io/badge/Built%20on-Cronos-002D74?style=for-the-badge&logo=ethereum&logoColor=white)](https://cronos.org)
-[![Solidity](https://img.shields.io/badge/Solidity-0.8.24-363636?style=for-the-badge&logo=solidity&logoColor=white)](https://soliditylang.org)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![wagmi](https://img.shields.io/badge/wagmi-v2-1C1C1E?style=for-the-badge&logo=ethereum&logoColor=white)](https://wagmi.sh)
-[![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
-
-<br/>
-
-> **Split bills. Settle debts. On-chain. Trustlessly.**  
-> ChainSplit brings group expense management to the blockchain — no middlemen, no trust issues, just code.
-
-<br/>
-
-[🚀 **Live Demo**](https://chainsplit.vercel.app) &nbsp;·&nbsp; [📄 **Smart Contracts**](#-smart-contracts) &nbsp;·&nbsp; [🛠️ **Setup Guide**](#-getting-started) &nbsp;·&nbsp; [🏗️ **Architecture**](#️-architecture)
-
-<br/>
-
-</div>
+<p align="center">
+  <a href="https://chain-split.vercel.app">chain-split.vercel.app</a> &nbsp;·&nbsp;
+  <a href="https://github.com/0xMayurrr/ChainSplit">GitHub</a> &nbsp;·&nbsp;
+  <a href="#getting-started">Setup</a>
+</p>
 
 ---
 
-## 🧩 What is ChainSplit?
+You've split bills on Splitwise. You've chased friends for money on Venmo. You've trusted some company's database to keep track of who owes what.
 
-Going on a trip with friends? Splitting rent? Shared subscriptions? ChainSplit handles it all — **on-chain**.
-
-Each group deploys its own smart contract vault on the **Cronos EVM**. Members deposit funds, log expenses, and the contract automatically computes who owes what using a **greedy debt-minimization algorithm**. Settle debts peer-to-peer with a single transaction. No spreadsheets. No Venmo. No arguments.
-
-```
-User A pays dinner ($100)  →  ChainSplit logs it on-chain
-                            →  Calculates: B owes $33, C owes $33
-                            →  B & C call settleDebt() to pay trustlessly
-                            →  Group marked ✅ Settled
-```
+ChainSplit puts all of that on-chain. Each group deploys its own smart contract vault on **Cronos EVM**. Members log expenses, the contract calculates settlements using a greedy debt-minimization algorithm, and everyone settles peer-to-peer — no platform in the middle, no accounts, no trust required.
 
 ---
 
-## ✨ Features
+## Deployments
 
-| Feature | Description |
-|--------|-------------|
-| 🏦 **Group Vaults** | Every group gets its own deployed smart contract — isolated, non-custodial |
-| 💸 **Equal & Custom Splits** | Split equally or assign custom weight per member |
-| 🤝 **On-Chain Settlement** | Trustless `settleDebt()` with a transparent 1% protocol fee |
-| 📊 **Greedy Debt Minimization** | Smart contract minimizes total number of settlement transactions |
-| 🔐 **Reentrancy Protected** | Custom `nonReentrant` modifier on all fund-transfer functions |
-| 🌐 **Live Activity Feed** | Real-time timeline with category filters (Expenses · Settlements · Payments) |
-| 🔗 **WalletConnect v2** | MetaMask, Rainbow, Coinbase Wallet — all via RainbowKit |
-| 📁 **IPFS Metadata** | Group avatars & metadata pinned to Pinata — decentralized by default |
-| 📱 **Mobile-First UI** | Bottom nav on mobile, sidebar on desktop — fully responsive |
-| 🗄️ **Off-Chain Indexer** | Express + MongoDB backend indexes on-chain events for fast reads |
+| Service | URL |
+|---------|-----|
+| Frontend | [chain-split.vercel.app](https://chain-split.vercel.app) |
+| Backend API | [chainsplit-389w.onrender.com](https://chainsplit-389w.onrender.com) |
+| Database | MongoDB Atlas |
+| File Storage | Pinata (IPFS) |
+
+**Factory Contract — Cronos Testnet (`338`)**
+```
+0xe9256300bb409b5Cf8CF16aDD6A0aDB0cc72E5bf
+```
+
+> Get testnet CRO → [cronos.org/faucet](https://cronos.org/faucet)
 
 ---
 
-## 🏗️ Architecture
+## How it works
 
 ```
-ChainSplit/
-│
-├── 📦 contracts/                   # Hardhat project — Solidity smart contracts
-│   ├── ChainSplitFactory.sol       # Factory: deploys & indexes GroupVaults
-│   └── GroupVault.sol              # Per-group vault — full expense + settlement logic
-│
-├── 🖥️  frontend/                   # Vite + React 18 + TypeScript dApp
-│   └── src/
-│       ├── pages/                  # Dashboard · Groups · Activity · Profile
-│       ├── components/             # Sidebar, shared UI components
-│       ├── abis/                   # Contract ABIs + deployed addresses
-│       ├── hooks/                  # Custom wagmi hooks (useGroupVault, etc.)
-│       ├── services/               # Axios API client
-│       └── config/                 # wagmi / RainbowKit chain config
-│
-└── ⚙️  backend/                    # Express + TypeScript REST API
-    └── src/
-        ├── routes/                 # /groups · /expenses · /users
-        ├── models/                 # Mongoose schemas (MongoDB Atlas)
-        ├── services/               # Blockchain indexer · IPFS service
-        └── middleware/             # Rate limiting · Input validation
+1.  A group admin calls createGroup()
+    → Factory deploys a fresh GroupVault contract
+
+2.  Admin invites members via addMember(address, name)
+
+3.  Members deposit CRO into the vault
+
+4.  Anyone logs an expense:
+    addExpenseEqual()   →  split evenly across members
+    addExpenseCustom()  →  assign custom weights per person
+
+5.  calculateSettlements() runs a greedy algorithm
+    → returns the minimum set of transactions to clear all debts
+
+6.  Each debtor calls settleDebt(creditor)
+    → CRO transfers directly, 1% protocol fee applied
+
+7.  Admin calls markGroupSettled() to close the vault
 ```
 
-### How it all fits together
-
-```
-Browser (React/wagmi)
-    │
-    ├── writes  ──────────────────► Cronos EVM (GroupVault.sol)
-    │                                   │
-    │                                   └── Events emitted ──► Backend Indexer
-    │                                                               │
-    └── reads  ◄──────────────────── Express REST API ◄────────────┘
-                                     (MongoDB cache)
-```
+No off-chain matching. No central server holding funds. The contract is the arbiter.
 
 ---
 
-## 🔐 Smart Contracts
+## Contracts
 
 ### `ChainSplitFactory.sol`
 
-The single entry point. Deploys a fresh `GroupVault` per group and maintains a global registry of all vaults.
+Entry point. Deploys a `GroupVault` per group and maintains a global registry.
 
 ```solidity
 function createGroup(
@@ -113,227 +81,142 @@ function createGroup(
 ) external returns (address vault);
 ```
 
-**🟢 Deployed — Cronos Testnet:** `0xe9256300bb409b5Cf8CF16aDD6A0aDB0cc72E5bf`
-
 ---
 
 ### `GroupVault.sol`
 
-The core contract. Each group gets an isolated vault that owns all logic — member management, expense tracking, balance computation, and fund settlement.
+One contract per group. Owns all logic — membership, expenses, net balance computation, fund flows.
 
-**Deployed — Cronos Testnet:** `0x7d828173126408b4fbdd3cef614698d452be5a3e`
+```solidity
+addMember(address, name)       // Admin: add a wallet to the group
+deposit()                      // Member: deposit CRO into vault
+addExpenseEqual(...)           // Member: log an equal-split expense
+addExpenseCustom(...)          // Member: log a weighted expense
+calculateSettlements()         // Public: returns optimal settlement paths
+settleDebt(address creditor)   // Member: pay a creditor (1% fee)
+markGroupSettled()             // Admin: lock the group
+withdrawRemaining()            // Admin: reclaim leftover balance
+```
 
-#### Key Functions
+**Security**
+- Custom `nonReentrant` guard on all ETH-transfer functions
+- `onlyAdmin` / `onlyMember` / `notSettled` access modifiers
+- No external contract calls — zero attack surface from dependencies
 
-| Function | Access | Description |
-|----------|--------|-------------|
-| `addMember(address, name)` | Admin | Invite a wallet address to the group |
-| `deposit()` | Member | Deposit CRO into the shared vault |
-| `addExpenseEqual(...)` | Member | Log an equally-distributed expense |
-| `addExpenseCustom(...)` | Member | Log a custom-weighted expense |
-| `calculateSettlements()` | Public | Returns optimal settlement paths (greedy algo) |
-| `settleDebt(address)` | Member | Pay a creditor directly — 1% protocol fee applied |
-| `markGroupSettled()` | Admin | Lock the group once all debts are cleared |
-| `withdrawRemaining()` | Admin | Reclaim leftover vault balance post-settlement |
+---
 
-#### Security Model
+## Stack
+
+**Smart Contracts** — Solidity `0.8.24`, Hardhat, deployed on Cronos EVM
+
+**Frontend** — Vite + React 18 + TypeScript, TailwindCSS, wagmi v2, RainbowKit, viem
+
+**Backend** — Express + TypeScript, Mongoose, ethers.js v6, Pinata SDK, express-rate-limit
+
+**Infrastructure** — Vercel (frontend), Render (backend), MongoDB Atlas, Pinata IPFS
+
+---
+
+## Project Structure
 
 ```
-✅ Custom nonReentrant modifier    — Guards all ETH-transfer functions
-✅ onlyAdmin modifier              — Factory-set admin controls group lifecycle
-✅ onlyMember modifier             — Restricts expense/settlement to participants
-✅ notSettled modifier             — Prevents actions on finalized groups
-✅ No external dependencies        — Zero upgradeable proxies, zero external calls
+ChainSplit/
+├── contracts/
+│   ├── ChainSplitFactory.sol
+│   └── GroupVault.sol
+│
+├── frontend/
+│   └── src/
+│       ├── pages/          # Dashboard, Groups, Activity, Profile
+│       ├── hooks/          # Custom wagmi hooks
+│       ├── abis/           # Contract ABIs + addresses
+│       └── config/         # wagmi / RainbowKit config
+│
+└── backend/
+    └── src/
+        ├── routes/         # /groups, /expenses, /users
+        ├── models/         # Mongoose schemas
+        └── services/       # Chain indexer, IPFS service
 ```
 
 ---
 
-## 🖥️ Frontend
-
-Built with **Vite + React 18 + TypeScript + TailwindCSS**, powered by **wagmi v2** and **RainbowKit** for seamless wallet UX.
-
-### Pages
-
-| Route | Page | Description |
-|-------|------|-------------|
-| `/` | Landing | Connect wallet & introduction |
-| `/dashboard` | Dashboard | Stats, groups overview, recent activity |
-| `/groups` | Groups List | All groups this wallet is a member of |
-| `/groups/create` | Create Group | Deploy a new GroupVault contract |
-| `/groups/:address` | Group Detail | Members, expenses, settlement interface |
-| `/activity` | Activity Feed | Live timeline with category filters |
-| `/profile` | Profile | Settings, display name, avatar |
-
-### Tech Stack
-
-```
-wagmi v2          →  Type-safe contract reads/writes
-RainbowKit        →  Multi-wallet connection UI
-viem              →  Low-level EVM utilities
-React Router v6   →  Client-side routing
-TailwindCSS       →  Utility-first styling + custom tokens
-Pinata SDK        →  IPFS uploads (group avatars + metadata)
-```
-
----
-
-## ⚙️ Backend
-
-A lightweight **Express + TypeScript** REST API for off-chain indexing, metadata caching, and IPFS integration — ensuring the frontend stays fast even with large groups.
-
-### Endpoints
-
-```
-GET  /api/groups                     → All groups indexed from chain events
-GET  /api/groups/:vault              → Group metadata + member list
-GET  /api/groups/:vault/expenses     → Full expense history for a vault
-POST /api/users/profile              → Update display name / avatar (IPFS pin)
-```
-
-**Stack:** Express · Mongoose · MongoDB Atlas · ethers.js v6 · Pinata IPFS · express-rate-limit
-
----
-
-## 🌍 Network Info
-
-| Network | Chain ID | RPC Endpoint |
-|---------|----------|-------------|
-| Cronos Mainnet | `25` | `https://evm.cronos.org` |
-| Cronos Testnet | `338` | `https://evm-t3.cronos.org` |
-
-> 💧 Need testnet CRO? Grab it from the [Cronos Testnet Faucet](https://cronos.org/faucet)
-
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js **18+**
-- A Cronos-compatible wallet (MetaMask recommended)
+- Node.js 18+
+- MetaMask (or any Cronos-compatible wallet)
 - MongoDB Atlas URI
-- Pinata API credentials (for IPFS)
+- Pinata credentials
 - WalletConnect v2 Project ID
 
----
-
-### Step 1 — Clone the repo
+### Install & run
 
 ```bash
+# Clone
 git clone https://github.com/0xMayurrr/ChainSplit.git
 cd ChainSplit
-```
 
----
-
-### Step 2 — Deploy Smart Contracts
-
-```bash
-# Install dependencies
+# Contracts
 npm install
-
-# Compile contracts
 npm run compile
-
-# Set up environment
-cp .env.example .env
-# → Add PRIVATE_KEY and CRONOS_TESTNET_RPC_URL
-
-# Deploy to Cronos Testnet
+cp .env.example .env        # Add PRIVATE_KEY + CRONOS_TESTNET_RPC_URL
 npm run deploy:testnet
-```
 
----
-
-### Step 3 — Start the Backend
-
-```bash
+# Backend
 cd backend
-cp .env.template .env
-# → Fill in MONGODB_URI, PINATA_*, FACTORY_ADDRESS, FRONTEND_URL
+cp .env.template .env       # Add MONGODB_URI, PINATA_*, FACTORY_ADDRESS
+npm install && npm run dev   # → localhost:3000
 
-npm install
-npm run dev     # Runs on http://localhost:3000
-```
-
----
-
-### Step 4 — Start the Frontend
-
-```bash
+# Frontend
 cd frontend
-cp .env.example .env
-# → Set VITE_FACTORY_ADDRESS, VITE_WALLETCONNECT_PROJECT_ID, VITE_API_URL
-
-npm install
-npm run dev     # Runs on http://localhost:5173
+cp .env.example .env        # Add VITE_FACTORY_ADDRESS, VITE_WALLETCONNECT_PROJECT_ID
+npm install && npm run dev   # → localhost:5173
 ```
 
-Open `http://localhost:5173`, connect your wallet, and start splitting. ⚡
+### Environment Variables
 
----
+**Frontend**
 
-## 🔑 Environment Variables
-
-### Frontend (`frontend/.env`)
-
-| Variable | Description |
-|----------|-------------|
-| `VITE_FACTORY_ADDRESS` | Deployed factory contract address (testnet) |
-| `VITE_FACTORY_ADDRESS_MAINNET` | Mainnet factory address |
-| `VITE_WALLETCONNECT_PROJECT_ID` | WalletConnect v2 project ID from cloud.walletconnect.com |
+| Key | Description |
+|-----|-------------|
+| `VITE_FACTORY_ADDRESS` | Factory contract on testnet |
+| `VITE_FACTORY_ADDRESS_MAINNET` | Factory contract on mainnet |
+| `VITE_WALLETCONNECT_PROJECT_ID` | From cloud.walletconnect.com |
 | `VITE_NETWORK` | `testnet` or `mainnet` |
-| `VITE_API_URL` | Your backend base URL |
+| `VITE_API_URL` | Backend base URL |
 
-### Backend (`backend/.env`)
+**Backend**
 
-| Variable | Description |
-|----------|-------------|
+| Key | Description |
+|-----|-------------|
 | `MONGODB_URI` | MongoDB Atlas connection string |
-| `FACTORY_ADDRESS` | Cronos Testnet factory address |
-| `FACTORY_ADDRESS_MAINNET` | Cronos Mainnet factory address |
-| `CRONOS_TESTNET_RPC_URL` | Cronos testnet RPC endpoint |
+| `FACTORY_ADDRESS` | Testnet factory address |
+| `CRONOS_TESTNET_RPC_URL` | Cronos testnet RPC |
 | `PINATA_API_KEY` | Pinata API key |
-| `PINATA_API_SECRET` | Pinata secret key |
-| `PINATA_JWT` | Pinata JWT (preferred auth method) |
-| `FRONTEND_URL` | CORS allowed origin (your Vercel deployment URL) |
+| `PINATA_JWT` | Pinata JWT (recommended) |
+| `FRONTEND_URL` | CORS allowed origin |
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Here's how to get involved:
+## Contributing
 
 ```bash
-# 1. Fork this repository
-# 2. Create a feature branch
-git checkout -b feat/amazing-feature
-
-# 3. Commit your changes (use conventional commits)
-git commit -m 'feat: add amazing feature'
-
-# 4. Push to your branch
-git push origin feat/amazing-feature
-
-# 5. Open a Pull Request
+git checkout -b feat/your-feature
+git commit -m "feat: describe your change"
+git push origin feat/your-feature
+# open a PR
 ```
 
-**Good first issues:** contract tests, UI polish, additional wallet support, mainnet deployment scripts.
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE)
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00A3FF,50:0052CC,100:002D74&height=120&section=footer" width="100%"/>
-
-**Built by [0xMayur](https://github.com/0xMayurrr) · Deployed on [Cronos](https://cronos.org) · Powered by Solidity**
-
-⭐ **Star this repo** if ChainSplit helped you ship something awesome!
-
-</div>
+<p align="center">
+  Built by <a href="https://github.com/0xMayurrr">0xMayur</a> &nbsp;·&nbsp; Cronos EVM &nbsp;·&nbsp; Solidity
+</p>
