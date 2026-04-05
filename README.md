@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="YOUR_LOGO_URL" alt="ChainSplit" width="96" height="96" />
+  <img src="frontend\public\Geometric_Chain_Link_Logo_Design-removebg-preview.png" alt="ChainSplit" width="96" height="96" />
 </p>
 
 <h1 align="center">ChainSplit</h1>
